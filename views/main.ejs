@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+		<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+		<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+		<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+		<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+		    <head>
+		        <meta charset="utf-8">
+		        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		        <meta name="description" content="">
+		        <meta name="viewport" content="width=device-width, initial-scale=1">
+				<TITLE>List Nuts Main Menu</TITLE>
+				<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+   		 		<link rel="stylesheet" type="text/css" href="css/custom.css">
+		    </head>
+		    <body class="mainBody">
+		    <div class="mainHeader">
+		    	<h1>Contacts</h1>
+		    	<h2>Main Menu</h2>
+		    </div>
+		        <!--[if lt IE 7]>
+		            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		        <![endif]-->
+		        <div class="mainMenuWrapper" > 
+					<div class="mainMenu"> 
+						<form class="mainForm" action="/mainChoice" method="get">
+							<fieldset class="mainField">
+								<div class="mainInput">					
+								<input class="radio" type="radio" name="main" value="listNuts" id="listContacts"><label class="mainLabel" for="listContacts">List Contacts</label><br>
+								</div>
+								<div class="mainInput">
+								<input class="radio" type="radio" name="main" value="listBdays" id="listBdays"><label class="mainLabel" for="listlistBdays">List Birthdays</label><br>
+								</div>
+								<div class="mainInput">
+								<input class="radio" type="radio" name="main"  value="logout" id="logout"><label class="mainLabel" for="logout">Logout</label><br>
+								</div>
+								<div class="mainInput">
+								<input class="mainSubmit" type="submit" value="Submit">
+								</div>
+							</fieldset>
+						</form>
+					</div><!-- class="mainMenu" -->
+				</div><!-- div class="mainMenuWrapper" -->
+		    </body>
+		</html>		

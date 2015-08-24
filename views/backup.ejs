@@ -1,0 +1,121 @@
+<!-- <!doctype html> -->
+
+<html>
+
+	<head>
+    <TITLE>List Nuts</TITLE>
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" />
+ 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>   
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/js/ejs_fulljslint.js" type="text/javascript"></script> 
+    <script src="js/main.js"></script> 
+
+    </head>
+
+	<body class="list">
+
+ 
+		<div><h1 class="listTitle">Mr Carson's Book</h1></div>
+		<div class="numNutsDiv"><p class="numNuts">Number in Cast: <%= numNuts %></p></div> 
+ 		<div class="carsonsContainer">
+              
+ 	           <% if (searching !== true) { %>
+
+                    <div class="content">
+ 	  
+ 	          		<ul class="carsonsBookEntry">
+
+
+ 	          		<% for (var i = 0; i < numNuts; i++) { %>
+ 
+ 	          			<li id="NutID" + <%= nuts[i]._id %> class="carsonsBookEntry bold gold"><%= nuts[i].SirName %>       <a href="editNut?target=" +<%= nuts[i]._id %> ><i class="fa fa-pencil-square-o" title="Edit"></i></a>    <a href="deleteNut?target=" + <%= nuts[i]._id %> ><i class="fa fa-trash" title="Delete"></i></a></li>
+ 	          			<% if (nuts[i].Names) { %>
+ 	          				<li class="carsonsBookEntry orange">   <%= nuts[i].Names %></li>
+ 	          			<% } %>
+						<% if (nuts[i].Children) { %>
+							<li class="carsonsBookEntry blue"><i class="fa fa-child" title="Progeny"></i>   <%= nuts[i].Children %></li>
+						<% } %>
+						  <% if (nuts[i].Address[1]) {  %>
+							<li class="carsonsBookEntry blue"><i class="fa fa-home" title="Address"></i>  <%= (JSON.parse(JSON.stringify(nuts[i].Address[1]))["street_address"]) %></li>
+							<li class="carsonsBookEntry blue">    <%= (JSON.parse(JSON.stringify(nuts[i].Address[1]))["city"]) %></li>
+							<li class="carsonsBookEntry blue">    <%= (JSON.parse(JSON.stringify(nuts[i].Address[1]))["state"]) %></li>
+				 			<li class="carsonsBookEntry blue">    <%= (JSON.parse(JSON.stringify(nuts[i].Address[1]))["country"]) %></li>
+							<li class="carsonsBookEntry blue">    <%= (JSON.parse(JSON.stringify(nuts[i].Address[1]))["zip"]) %></li>
+						<% } %>
+						<% if (nuts[i].Email[1]) { %>  
+							<li class="carsonsBookEntry red"><i class="fa fa-envelope-o fa" title="Email"></i>  <%= (JSON.parse(JSON.stringify(nuts[i].Email[1]))["Email"]) %></li>
+						<% } %>
+						<% if (nuts[i].Email[2]) { %>
+							<li class="carsonsBookEntry red">    <%= (JSON.parse(JSON.stringify(nuts[i].Email[2]))["Email"]) %></li>
+						<% } %>
+						<% if (nuts[i].Email[3]) { %>
+							<li class="carsonsBookEntry red">   <%= (JSON.parse(JSON.stringify(nuts[i].Email[3]))["Email"]) %></li>
+						<% } %>
+						<% if (nuts[i].Phone[1]) { %>
+							<li class="carsonsBookEntry green"><i class="fa fa-phone" title="Phone"></i>   <%= (JSON.parse(JSON.stringify(nuts[i].Phone[1]))["Phone"]) %></li>
+						<% } %>
+						<% if (nuts[i].Phone[2]) { %>
+							<li class="carsonsBookEntry green">    <%= (JSON.parse(JSON.stringify(nuts[i].Phone[2]))["Phone"]) %></li>
+						<% } %>
+						<% if (nuts[i].Notes) { %>
+							<li class="notes"><i class="fa fa-pencil note_spot" title="Notes"></i><textarea class="ta_class" cols=30 rows=3 wrap="hard"> <%= nuts[i].Notes %></textarea ></li>
+						<% } %>	
+						<li class="carsonsBookEntry maroon">Updated:<% var ud = nuts[i].Updated.toString().slice(0,15).replace(/-/g,""); %><%= ud %></li>
+						<li class="carsonsBookEntry white">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</li>						
+					
+					</ul>
+
+		  </div>
+
+          <% } %>
+ 		
+         <div class="search">
+ 			<form id="searchForm" action="#" method="post">
+ 				 <input id="searchName" class="searchInput" type="text" name="target" placeholder="Search" ><input id="submitButton" name="submit" type="image" src="../images/searchtool.png" alt="Submit">
+			</form>
+		</div>
+        <div class="messages"></div>
+
+ 	  <script type="text/javascript">
+                 
+            $(window).load(function(){
+          	 	list();
+    
+            $("#searchForm").submit(function(event) {           
+                event.preventDefault();
+                var searchData = $("#searchName").val(), jqxhr; 
+                console.log("In onsubmit js function " + $("#searchName").val());
+                jqxhr = $.ajax({               
+                    'headers' : {'Content-Type' : 'application/json'},
+                    'processData' : false,            
+                    type: 'POST',
+                    data : JSON.stringify({'target' : searchData}), 
+                    dataType: "text", 
+                    url: "/search"              
+                    }).done(function(returnedID) {
+                        if (returnedID === "No match") {
+                            $(".messages").text(returnedID).fadeOut(2000, function(){
+                                $(this).empty().show(); // turn display back on                               
+                            });
+                            $("#searchName").val("");                         
+                            console.log("dang, " + jqxhr.responseText);
+                        } else {                    
+                            var position = "#NutID_" + returnedID;
+                            $(".messages").text("");
+                            $(".content").mCustomScrollbar("scrollTo", position);
+                       }
+                    }).fail ( function (jqxhr, status, error) {
+                        alert("error: " + error + " status: " + status + " jqxhr.responseText: " + jqxhr.responseText + " at line 112 listNuts.ejs");
+                    });  
+                      
+                }); /* searchForm submit */
+                           
+        	 });    /* window load function */
+
+   	    </script>
+
+    </body>
+
+</html>

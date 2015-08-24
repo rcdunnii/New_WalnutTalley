@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="utf-8">
+    <TITLE>List Nuts</TITLE>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.0.7/jquery.mCustomScrollbar.css" type="text/css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>   
+    <script src="//cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.0.7/jquery.mCustomScrollbar.concat.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="/js/main.js"></script>  
+
+    </head>
+
+	<body class=mainBody>
+            <div class="listTitleDiv"><%- "<h1 class='listTitleHdr'>" +  title  + "</h1>" %> </div>
+ 
+        <div class="wrapper">
+            <div class="spacer"> 
+                    <div class="edit">
+                        <div class="contactFormClass">
+                            <form id="contactForm" action="" method="post">
+                                 <input id="_id" type="hidden" name="_id">
+                                 <input id="walnutID" type="hidden" name="walnutID">
+                                 <input id="visibility" type="hidden" name="visibility">
+                                 <input id"addr_id"  type="hidden" name="addr_id">
+                                 <input id"email_id" type="hidden" name="email_id">
+                                 <input id"phone_id" type="hidden" name="phone_id">
+                                 <div class="sirNameDisplay">
+                                 
+                                    <div class="inputDiv">
+                                        <label class="editLabel" for="SirName">SirName</label>
+                                        <input id="sirName" class= "editInput" type="text" name="sirName">
+                                    </div>   
+                                 </div>
+                                 <input id="formalNames" type="hidden" name="FormalNames" >
+                                 <div class="inputDiv">
+                                    <label class="editLabel" for="names">Family Members</label>
+                                    <input id="names" class= "editInput" type="text" name="names"  autocomplete="off">
+                                 </div>
+                                 <div class="inputDiv">
+                                    <label class="editLabel" for="children">Progeny</label>
+                                    <input id="children" class= "editInput" type="text" name="children" autocomplete="off" >
+                                 </div>
+                                 
+                                 <div class="inputDiv">
+                                    <label class="editLabel" for="street">Street Address</label>
+                                    <input id="street" class= "editInput" type="text" name="street" autocomplete="off">
+                                 </div>
+                                 <div class="inputDiv">
+                                    <label class="editLabel" for="city">City</label>
+                                    <input id="city" class= "editInput" type="text" name="city" autocomplete="off">
+                                 </div>
+                                 <div class="inputDiv">
+                                    <label class="editLabel" for="state">State/Province</label>
+                                    <input id="state" class= "editInput" type="text" name="state" autocomplete="off">
+                                 </div>
+                                 <div class="inputDiv">
+                                    <label class="editLabel" for="country">Country</label>
+                                    <input id="country" class= "editInput" type="text" name="country" autocomplete="off">
+                                 </div>
+                                <div class="inputDiv">
+                                    <label class="editLabel" for="zip">Zip</label>
+                                    <input id="zip" class= "editInput" type="text" name="zip" autocomplete="off">
+                                 </div>
+                                 
+                                 <div class="inputDiv">
+                                     <label class="editLabel" for="email1">Preferred Email</label>
+                                     <input id="email1" class= "editInput" type="email" name="email1" autocomplete="off"> 
+                                 </div>
+                                 <div class="inputDiv">                                
+                                    <label class="editLabel" for="email2">Alt Email</label>
+                                    <input id="email2" class= "editInput" type="email" name="email2" autocomplete="off">
+                                 </div>
+                                 <div class="inputDiv">
+                                     <label class="editLabel" for="email3">Alt Email</label>                                              
+                                     <input id="email3" class= "editInput" type="email" name="email3" autocomplete="off">
+                                 </div>
+                                 
+                                 <div class="inputDiv">
+                                    <label class="editLabel" for="phone1">Preferred Phone</label> 
+                                    <input id="phone1" class= "editInput" type="text" name="phone1" autocomplete="off">
+                                 </div>
+                                 <div class="inputDiv">
+                                    <label class="editLabel" for="phone2">Alt Phone</label> 
+                                    <input id="phone2" class= "editInput" type="text" name="phone2" autocomplete="off">
+                                 </div>
+                                 <div class="inputDiv">
+                                    <label class="editNotesLabel" for="notes">Notes</label>                                    
+                                    <textarea id="notes" class="noscrollbars editNotes" name="notes" onkeyup="autoGrow(this);"></textarea>
+                                 </div>
+                                    <input id="created" class= "editInput" type="hidden" name="created">
+                                    <input id="updated" class= "editInput" type="hidden" name="updated"> 
+                                <div class="inputDiv">
+                                    <input id="editSubmit" class="editButton" type="submit"  alt="Save" >
+                                </div>
+
+                                <div class="inputDiv">
+                                    <input id="cancelSubmit" class="cancelButton" type="button"  value="Cancel" >
+                                </div>
+                            </form>  <!-- contactForm -->
+                        </div>       <!-- contactFormClass -->        
+                    </div>  	     <!-- edit -->	
+          
+
+
+                
+                    <div class="list">
+
+                    <% if (searching !== true) { %>
+                        <div class="content">
+                            <ul class="listBookEntry">
+                                <% for (var i = 0; i < numNuts; i++) { %>
+                                    <%   var id_num = nuts[i]._id,  id_string = 'NutID_' + id_num %>
+<li id= <%= id_string %> class="listBookEntry"><a id= <%= id_num %> class="bold gold" href="#" onclick= "getContact('<%= id_num %>')" title ="View/Edit"><%= nuts[i].SirName %></a><a href="#" class="bold gold" onclick = "rmContact('<%= id_num %>')" title="Remove Contact"><span class="trash" ><i class="fa fa-trash-o"></i></span></a> </li>
+                                    <% if (nuts[i].Names) { %>
+                                        <li class="listBookEntry orange">       <%= nuts[i].Names %></li>
+                                    <% } %> 
+                                <% } %> 
+                            </ul>       
+                        </div>      
+                    <% } %>      
+
+                    
+                    <form id="navMenuForm" class="navMenuForm" action="" method="post">
+                        <div class="navMenu">
+                            <div class="navMenuElements">
+                                <input id="homeBtn" class="homeBtn" type="button" value="Home" name="home" title="Go Home" >
+                                <input id="addName" class="addName" type="button" value="Add" name="add" title="Add Name" >                                
+                                <input id="searchName" class="searchInput" type="search" name="target" placeholder="Search" title="Search for Name">
+                                <input id="submitButton" class="submitButton" name="submit" type="image" src="../images/searchtool.png"     alt="Submit">
+                            </div>
+                        </div> 
+                    </form>
+                                      
+
+                    </div>    <!-- div class="list"   -->
+       
+            </div>         <!-- div class="spacer"  -->
+
+            <div class="messages"></div>
+
+        </div>    <!-- wrapper -->         
+
+            <script type="text/javascript">
+
+            $(window).load(function(){
+                list();
+
+
+                // called when a name is entered in list window's navMenuForm search input field: requests a search of the the database for person
+                // if found list scrolls to that person
+                $("#navMenuForm").submit(function(event) {           
+                    event.preventDefault();
+                    var searchData = $("#searchName").val(), jqxhr; 
+                    if (!searchData) {
+                        $(".messages").addClass('pinkClass').text("Must enter Name").fadeOut(2000, function(){
+                            $(this).removeClass('pinkClass').empty().show();                              
+                        });                        
+                        return; 
+                    }
+                    jqxhr = $.ajax({               
+                        'headers' : {'Content-Type' : 'application/json'},
+                        'processData' : false,            
+                        type: 'POST',
+                        data : JSON.stringify({'target' : searchData}), // data to be sent to server
+                        dataType: "text",  // type data expected back
+                        url: "/search"              
+                        }).done(function(returnedID) {
+                            if (returnedID === "No match") {
+                                $(".messages").addClass('pinkClass').text(returnedID).fadeOut(5000, function(){
+                                    $(this).removeClass('pinkClass').empty().show(); 
+                                });
+                                $("#searchName").val("");                         
+                            } else {                    
+                                var position = "#NutID_" + returnedID; // li element has id of "NutID_" + returnedID
+                                $("#" + returnedID).addClass("highlight"); // anchor link has id=returnedID
+                                $(".messages").text("");
+                                $(".content").mCustomScrollbar("scrollTo", position);
+                                $("#searchName").val("");                                
+                           }
+                        }).fail ( function (jqxhr, status, error) {
+                            alert("error: " + error + " status: " + status + " jqxhr.responseText: " + jqxhr.responseText + " at line 158 listNuts.ejs");
+                        });  
+
+                    }); /* navMenuForm submit */
+                                        
+                   
+                    $("#contactForm").submit(function(event) {   // can be an addContact or editContact submit               
+                        event.preventDefault();
+                        var eventType = (($(".sirNameDisplay").css("display") === "none") ? "edit" : "add");
+                        //console.log("in submit contactForm in listNuts.ejs where eventType is: " + eventType);                        
+                       // var newData = $("#contactForm").serialize();
+                        var newData = JSON.stringify($("#contactForm").serializeObject());
+                        //console.log(newData);
+                        jqxhr = $.ajax({ 
+                             'headers' : {'Content-Type' : 'application/json'},
+                             'processData' : false,     
+                            type: 'POST',
+                            // ContentType : "application/x-www-form-urlencoded",
+                             //ContentType : "application/json",
+                            data : newData, // data to be sent to server
+                            dataType: "text",  // type data expected back
+                            url: "/saveContactData"
+                        }).done(function(data) {                            
+                            var objson = $.parseJSON(data);
+                            console.log("data is: " + data + ", objson is: " + objson + ", objson.result is: " + objson.result);
+                            if (objson.result === "Success") {
+                               $(".messages").addClass('pinkClass').text(objson.result).fadeOut(5000, function() {
+                                   $(this).removeClass('pinkClass').empty().show();
+                               });
+                               $(".list, .edit").toggle();
+                               $(".listTitleHdr").html("<h1 class='listTitleHdr'>Contact List</h1>");                 
+                               if (eventType === "add"){                           
+                                    $(".sirNameDisplay").hide(); // if an addContact submission
+                                    var position = objson.addID;
+                                    var thisHost = window.location.host;
+                                    //console.log("position is: " + position + " and objson.addID is: " + objson.addID);
+                                    window.location.replace("http://" + thisHost + "/mainChoice?main=listNuts&position=" + position);
+                               } else { // edit event - scroll to edited record
+                                    var position = objson.editID;
+                                    console.log("position is: " + position + " and objson.editID is: " + objson.editID);
+                               }     
+                               $(".content").mCustomScrollbar("update");
+                               $(".content").mCustomScrollbar("scrollTo", position);
+                            }
+                        }).fail (function (jqxhr, status, error) {
+                                alert("error: " + error + " status: " + status + " jqxhr.responseText: " + jqxhr.responseText + " at line   179 listNuts.ejs");
+                        }); 
+                     });
+                
+
+                    $("#cancelSubmit").click(function(event) {
+                        event.preventDefault();
+                        var jqxhr = $.ajax({               
+                           'headers' : {'Content-Type' : 'application/json'},
+                           'processData' : true,            
+                           type: 'GET',
+                           data : {main: 'listNuts'}, // data to be sent to server
+                           dataType: "text",  // type data expected back
+                           url: "/mainChoice" 
+                        }).done(function(data) {
+                               console.log(data);
+                               $(".sirNameDisplay").hide();
+                               $(".list, .edit").toggle();
+                               $(".listTitleHdr").html("<h1 class='listTitleHdr'>Contact List</h1>"); 
+                        }).fail(function (jqxhr, status, error) {
+                                alert("error: " + error + " status: " + status + " jqxhr.responseText: " + jqxhr.responseText + " at line 249 listNuts.ejs");
+                        }); 
+                     });
+
+					// following requests a form to add new item to the contacts list - adds listener to button on the contact list
+					// opens a blank edit contact form - a window hidden beneath the current contact list window to receive the new person's info
+                    $("#addName").click(function(event) {
+                        $(".highlight").removeClass("highlight"); // in case a search had been done leaving a hilited sirname
+                        $("#contactForm")[0].reset(); 
+                        $(".list").hide(); 
+                        $(".sirNameDisplay").show();                        
+                        $(".edit").show();
+                        $("#sirName").focus();                       
+                     });
+
+                    // following takes up to main menu
+                    $("#homeBtn").click(function(event){
+                        $(".highlight").removeClass("highlight"); // in case a search had been done leaving a hilited sirname
+                        var thisHost = window.location.host;                                    
+                        window.location.replace("http://" + thisHost + "/main");
+                    });
+
+                    $(".content").keypress(function (e) {
+                        var code = (e.keyCode ? e.keyCode : e.which);
+                        tag = e.target.tagName.toLowerCase();
+                        if ( tag !== 'input' && tag !== 'textarea') { 
+                            switch (code) {                         
+                            case 84:   //"T"
+                            case 116:  //"t"
+                                $(".content").mCustomScrollbar("scrollTo", "top", {scrollInertia: 200}); //scroll to top
+                                break;
+                            
+                            case 66:   //"B"
+                            case 98:   //"b"
+                                $(".content").mCustomScrollbar("scrollTo", "bottom", {scrollInertia: 200}); //scroll to bottom
+                                break;                            
+                            }
+                        }
+   
+                    });
+            });    /* window load function */
+
+            </script>
+
+    </body>
+
+
+</html>

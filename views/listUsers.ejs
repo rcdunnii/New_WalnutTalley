@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head></head>
+<body>	
+    <h1><%= title %></h1>
+    <p> <%= users %> </p><br>
+    <ul>
+    	<p> <% for (var i = 0; i < users.length; i++) { %>
+    		<li>User <%= i %> id: <%= users[i]._id %>, <br> local.email: <%= users[i].local.email %>, <br> local.password: <%= users[i].local.password %>, <br>
+    		resetPasswordExpires: <%= users[i].local.resetPasswordExpires %>,<br>
+    		resetPasswordToken: <%= users[i].local.resetPasswordToken %> </li>
+    		<% } %>
+    	</p>
+	</ul>	
+</body>
+</html>    

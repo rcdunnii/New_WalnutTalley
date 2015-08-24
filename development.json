@@ -1,0 +1,6 @@
+{
+  "NODE_ENV": "development",
+  "DEV_HOST": "127.0.0.1",
+  "DEV_PORT": "8080",
+  "DEV_HOST_PLUS_PORT": "127.0.0.1:8080"
+}

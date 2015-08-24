@@ -1,0 +1,10 @@
+config-leaf usage (see https://github.com/jed/config-leaf)
+The auth.js and database.js files in config folder are encrypted before pushing to github. This is done with these scripts:
+	npm run encrypt_auth 
+	npm run encrypt_database
+
+Then the contacts folder is pushed to AWS_EB_contacts on GitHub
+
+When pulled for edits or uploadded to AWS for production these files are decrypted	:
+	npm run decrypt_auth 
+	npm run decrypt_database

@@ -1,0 +1,71 @@
+{    
+     "_id": Schema.ObjectId,
+    "walnutID": String,
+    "visibility": Boolean,
+    "SirName": String,
+    "Names": String,
+    "FormalNames": String,
+    "Children": String,
+    "Address" : 
+      [ {"_id": Schema.ObjectId},      
+        {"street": String,         
+         "city"          : String,
+         "state"         : String,
+         "country"       : String,
+         "zip"           : String
+       }
+      ],       
+    "Email" :
+      [ {"_id": Schema.ObjectId},      
+        {"Email" : String }              
+      ],
+    "Phone"  :
+      [ {"_id": Schema.ObjectId},
+        {"Phone" : String}            
+      ],
+    "Notes": String,
+    "Created": Date,
+    "Updated": Date     
+}
+
+
+{
+  "_id": "",
+  "walnutID": "",
+  "visibility": true,
+  "SirName": "",
+  "Names": "",
+  "FormalNames": "",
+  "Children": "",
+  "Address": [
+    {
+      "_id": ""
+    },
+    {
+      "street": "",
+      "city": "",
+      "state": "",
+      "country": "",
+      "zip": ""
+    }
+  ],
+  "Email": [
+    {
+      "_id": ""
+    },
+    {
+      "Email": ""
+    }
+  ],
+  "Phone": [
+    {
+      "_id": ""
+    },
+    {
+      "Phone": ""
+    }
+  ],
+  "Notes": "",
+  "Created": "",
+  "Updated": ""
+}

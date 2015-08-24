@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Add a contact</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   		 <link rel="stylesheet" type="text/css" href="css/custom.css">
+		        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+
+    <body class="mainBody">
+		    <div class="mainHeader">
+		    	<h1>Contacts</h1>
+		    	<h2>Add New</h2>
+		    </div>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="mainAddWrapper" > <!-- class="mainMenuWrapper" -->
+					<div class="mainAdd"> <!-- class="mainMenu" -->
+						<form class="addForm" action="/addContact" method="get">
+							<fieldset class="mainField">
+							  "_id": Schema.ObjectId,
+     "visibility": String,
+     "SirName": String,
+     "Names": String,
+     "FormalNames": String,
+     "Children": String,
+     "Address": [ {
+		addr_field: String
+     	} ],
+ <!--     "Addr1": String,
+     "Addr2": String,
+     "Addr3": String,
+     "Addr4": String, -->
+     "Email": [{
+     	emailAddr : String
+     	}],
+     "Phone": [{
+     	phoneNum : String
+     }],
+     "Notes": String,
+     "Created": Date,
+     "Updated": Date
+								<label class="label" for="SirName">Sir Name</label><br>	
+								<input class="addContact" type="text" name="SirName" value="" id="SirName">
+
+								<label class="label" for="Names">Names</label><br>	
+								<input class="addContact" type="text" name="Names" value="" id="Names">
+								
+								<label class="label" for="Children">Children</label><br>	
+								<input class="addContact" type="text" name="children" value="" id="Children">
+
+								<label class="label" for="formalNames">Formal Names</label><br>	
+								<input class="addContact" type="text" name="formalNamesames" value="" id="formalNames">
+
+								<input class="mainSubmit" type="submit" value="Submit">
+							</fieldset>
+						</form>
+					</div><!-- class="mainMenu" -->
+				</div><!-- div class="mainMenuWrapper" -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script
+
+    </body>
+</html>

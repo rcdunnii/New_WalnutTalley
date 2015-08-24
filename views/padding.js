@@ -1,0 +1,1 @@
+<% var padStr = ".............................."; var padStrLen = padStr.length - nuts[i].SirName.length; var pad = padStr.substring(0, padStrLen);%><%= pad %>

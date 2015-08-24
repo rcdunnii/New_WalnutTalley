@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Birthday List</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style media="screen">
+        .bdayList {
+    			width: 200px;
+    			margin-left: auto;
+    			margin-right: auto;    			
+ 				position: relative;
+  				top: 10%; 				
+        }
+        .gradient {
+          background-color: #2b323f;
+          /* IE9, iOS 3.2+ */
+          background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiI     HByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3     RvcCBzdG9wLWNvbG9yPSIjNDg1NTZjIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMxYjIxMmIiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjUiLz48c3RvcCBzdG9   wLWNvbG9yPSIjMTQxOTIyIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC41MSIvPjxzdG9wIHN0b3AtY29sb3I9IiMzNTNiNDUiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVu      dD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+          background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(72, 85, 108)),color-stop(0.5, rgb(27, 33, 43)),color-stop(0.51, rgb(20, 25, 34)),     color-stop(1, rgb(53, 59, 69)));
+          /* Android 2.3 */
+          background-image: -webkit-repeating-linear-gradient(top,rgb(72, 85, 108) 0%,rgb(27, 33, 43) 50%,rgb(20, 25, 34) 51%,rgb(53, 59, 69) 100%);
+          /* IE10+ */
+          background-image: repeating-linear-gradient(to bottom,rgb(72, 85, 108) 0%,rgb(27, 33, 43) 50%,rgb(20, 25, 34) 51%,rgb(53, 59, 69) 100%);
+          background-image: -ms-repeating-linear-gradient(top,rgb(72, 85, 108) 0%,rgb(27, 33, 43) 50%,rgb(20, 25, 34) 51%,rgb(53, 59, 69) 100%);
+        }
+ 
+        /* IE8- CSS hack */
+        @media \0screen\,screen\9 {
+          .gradient {
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff48556c",endColorstr="#ff353b45",GradientType=0);
+          }
+        }
+        .container {
+                width: 240px;
+                height: 10px;
+                position: relative;
+                top: 225px;
+                left: -42px;
+                margin: 0 auto 30px;
+                /* border: 1px solid #CCC; */
+                -webkit-perspective: 120px;
+                -moz-perspective: 120px;
+                -o-perspective: 120px;
+                perspective:120px;
+         }       
+
+
+        #carousel {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          -webkit-transform-style: preserve-3d;
+             -moz-transform-style: preserve-3d;
+               -o-transform-style: preserve-3d;
+                  transform-style: preserve-3d;
+        }
+    
+        .ready #carousel {
+          -webkit-transition: -webkit-transform 1s;
+             -moz-transition: -moz-transform 1s;
+               -o-transition: -o-transform 1s;
+                  transition: transform 1s;
+        }
+    
+        #carousel.panels-backface-invisible figure {
+          -webkit-backface-visibility: hidden;
+             -moz-backface-visibility: hidden;
+               -o-backface-visibility: hidden;
+                  backface-visibility: hidden;
+        }
+    
+        #carousel figure {
+              display: block;
+              position: absolute;
+              width: 250px;
+              height: 30px;
+              left: 10px;
+              top: 10px;
+              border: 2px solid black;
+             /* line-height: 116px; */
+              font-size: 20px;
+              font-weight: bold;
+              color: white;
+              text-align: center;
+        }
+    
+        .ready #carousel figure {
+          -webkit-transition: opacity 1s, -webkit-transform 1s;
+             -moz-transition: opacity 1s, -moz-transform 1s;
+               -o-transition: opacity 1s, -o-transform 1s;
+                  transition: opacity 1s, transform 1s;
+        }
+
+  </style>
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+		<div class="bdayList">
+			<h1> <%= title %></h1>
+        </div>
+        
+			<section class="container" class="gradient"> <!--  section houses 3d space -->			
+ 	        	<div id="carousel">     <!-- wrapper for 3d object -->
+                    <% for (var i = 0; i < bDays.length; i++) { %>	        		
+ 	        			<figure >
+ 	        				<%= bDays[i].FirstName %> <%= bDays[i].MiddleInit %> <%= bDays[i].LastName %>, <%= bDays[i].bDayYYYY %>/<%= bDays[i].bDayMM %>/<%= bDays[i].bDayDD %>
+        				</figure>       				
+				          <% } %>
+            </div>         <!-- carousel     -->
+			</section>	       <!-- container -->
+       
+                        <!-- bdaylist  -->        	
+            <section id="options">
+                 <p>
+                    <label for="panel-count">panels</label>
+                    <input type="range" id="panel-count" value=<%  bDays.length %> min="3" max="150"/>
+                </p>
+                 <p>
+                    <button id="toggle-axis">Toggle Carousel Axis</button>
+                </p>
+
+                <p>
+                    <button id="toggle-backface-visibility">Toggle Backface Visibility</button>
+                </p>
+                <p id="navigation">
+                  <button id="previous" data-increment="-1">Previous</button>
+                  <button id="next" data-increment="1">Next</button>
+                </p>
+            </section>
+        
+        
+
+            <script src="../js/utils.js"></script>
+            <script>
+                var transformProp = Modernizr.prefixed('transform');
+    
+                function Carousel3D ( el ) {
+                    this.element = el;   
+                    this.rotation = 0;
+                    this.panelCount = 0;
+                    this.totalPanelCount = this.element.children.length;
+                    this.theta = 0;    
+                    this.isHorizontal = true;  
+                }
+    
+                Carousel3D.prototype.modify = function() {
+    
+                    var panel, angle, i;
+                        this.panelSize = this.element[ this.isHorizontal ? 'offsetWidth' : 'offsetHeight' ];
+                        this.rotateFn = this.isHorizontal ? 'rotateY' : 'rotateX';
+                        this.theta = 360 / this.panelCount;
+    
+                        // do some trig to figure out how big the carousel
+                        // is in 3D space
+                        this.radius = Math.round( ( this.panelSize / 2) / Math.tan( Math.PI / this.panelCount ) );
+    
+                        for ( i = 0; i < this.panelCount; i++ ) {
+                            panel = this.element.children[i];
+                            angle = this.theta * i;
+                            panel.style.opacity = 1;
+                            panel.style.backgroundColor = 'hsla(' + angle + ', 100%, 50%, 0.8)';
+                            // rotate panel, then push it out in 3D space
+                            panel.style[ transformProp ] = this.rotateFn + '(' + angle + 'deg) translateZ(' + this.radius + 'px)';
+                         }
+    
+                        // hide other panels
+                        for (  ; i < this.totalPanelCount; i++ ) {
+                            panel = this.element.children[i];
+                            panel.style.opacity = 0;
+                            panel.style[ transformProp ] = 'none';
+                        }
+    
+                        // adjust rotation so panels are always flat
+                        this.rotation = Math.round( this.rotation / this.theta ) * this.theta;   
+                        this.transform();
+    
+            };
+    
+            Carousel3D.prototype.transform = function() {
+                 // push the carousel back in 3D space,
+                 // and rotate it
+                this.element.style[ transformProp ] = 'translateZ(-' + this.radius + 'px) ' + this.rotateFn + '(' + this.rotation + 'deg)';
+            };
+    
+    
+    
+            var init = function() {
+    
+    
+            var carousel = new Carousel3D( document.getElementById('carousel') ),
+              panelCountInput = document.getElementById('panel-count'),
+              axisButton = document.getElementById('toggle-axis'),
+              navButtons = document.querySelectorAll('#navigation button'),
+    
+              onNavButtonClick = function( event ){
+                var increment = parseInt( event.target.getAttribute('data-increment') );
+                carousel.rotation += carousel.theta * increment * -1;
+                carousel.transform();
+              };
+    
+            // populate on startup
+            carousel.panelCount = parseInt( panelCountInput.value, 10);
+            carousel.modify();
+    
+    
+            axisButton.addEventListener( 'click', function(){
+                carousel.isHorizontal = !carousel.isHorizontal;
+                carousel.modify();
+            }, false);
+    
+            panelCountInput.addEventListener( 'change', function( event ) {
+                carousel.panelCount = event.target.value;
+                carousel.modify();
+            }, false);
+    
+            for (var i=0; i < 2; i++) {
+                navButtons[i].addEventListener( 'click', onNavButtonClick, false);
+            }
+    
+            document.getElementById('toggle-backface-visibility').addEventListener( 'click', function(){
+                carousel.element.toggleClassName('panels-backface-invisible');
+            }, false);
+    
+            setTimeout( function(){
+                document.body.addClassName('ready');
+            }, 0);
+    
+        };
+    
+         window.addEventListener( 'DOMContentLoaded', init, false);
+    </script>
+		
+    </body>
+</html>

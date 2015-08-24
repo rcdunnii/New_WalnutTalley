@@ -1,0 +1,41 @@
+     <!--
+                                <% if (nuts[i].Children) { %>
+                                <li class="listBookEntry blue"><i class="fa fa-child" title="Progeny"></i>   <%= nuts[i].Children %></li>
+                            <% } %>
+                              <% if (nuts[i].Address[1]) {  %>
+                                <li class="listBookEntry blue"><i class="fa fa-home" title="Address"></i>  <%= (JSON.parse(JSON.stringify(nuts[i].Address[   1]))["street_address"]) %></li>
+                                <li class="listBookEntry blue">    <%= (JSON.parse(JSON.stringify(nuts[i].Address[1]))["city"]) %></li>
+                                <li class="listBookEntry blue">    <%= (JSON.parse(JSON.stringify(nuts[i].Address[1]))["state"]) %></li>
+                                <li class="listBookEntry blue">    <%= (JSON.parse(JSON.stringify(nuts[i].Address[1]))["country"]) %></li>
+                                <li class="listBookEntry blue">    <%= (JSON.parse(JSON.stringify(nuts[i].Address[1]))["zip"]) %></li>
+                            <% } %>
+                            <% if (nuts[i].Email[1]) { %>  
+                                <li class="listBookEntry red"><i class="fa fa-envelope-o fa" title="Email"></i>  <%= (JSON.parse(JSON.stringify(nuts[i]. Email[1]))["Email"]) %></li>
+                            <% } %>
+                            <% if (nuts[i].Email[2]) { %>
+                                <li class="listBookEntry red">    <%= (JSON.parse(JSON.stringify(nuts[i].Email[2]))["Email"]) %></li>
+                            <% } %>
+                            <% if (nuts[i].Email[3]) { %>
+                                <li class="listBookEntry red">   <%= (JSON.parse(JSON.stringify(nuts[i].Email[3]))["Email"]) %></li>
+                            <% } %>
+                            <% if (nuts[i].Phone[1]) { %>
+                                <li class="listBookEntry green"><i class="fa fa-phone" title="Phone"></i>   <%= (JSON.parse(JSON.stringify(nuts[i].Phone[1   ]))["Phone"]) %></li>
+                            <% } %>
+                            <% if (nuts[i].Phone[2]) { %>
+                                <li class="listBookEntry green">    <%= (JSON.parse(JSON.stringify(nuts[i].Phone[2]))["Phone"]) %></li>
+                            <% } %>
+                            <% if (nuts[i].Notes) { %>
+                                <li class="notes"><i class="fa fa-pencil note_spot" title="Notes"></i><textarea class="ta_class" cols=30 rows=3 wrap="hard">    <%= nuts[i].Notes %></textarea ></li>
+                            <% } %> 
+                            <li class="listBookEntry maroon">Updated:<% var ud = nuts[i].Updated.toString().slice(0,15).replace(/-/g,""); %><%= ud %></li>
+                            <li class="listBookEntry white">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</li>
+-->
+                            <!-- <% } %> -->   <!--  for loop  -->
+
+                       <!-- </ul> -->    <!-- <ul class="listBookEntry"> -->
+
+                    <!-- </div>  --> <!-- <div class="content"> -->
+                
+            <!-- <% } %> -->   <!--      if searching -->          
+
+        <!-- </div>  -->         <!--    <div class="listContainer"> -->

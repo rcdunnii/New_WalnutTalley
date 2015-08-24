@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Birthday List</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .listColumn {
+          position: relative; 
+          width:  100%;
+          height: 100%;
+          background-color: #789;      
+        }
+        /* <!-- <style media="screen"> --> */
+          .bdayList {
+    		  	width: 200px;
+    		  	margin-left: auto;
+    		  	margin-right: auto;    			
+ 				    position: relative;
+  			  	top: 50px; 				
+          }
+          .container {
+             width: 268px;
+             height: 300px;
+             margin-left: auto;
+             margin-right: auto;
+             margin-top: 100px;
+             border-radius: 4px;
+          }
+          .content {
+              height: 250px;
+              width: 227px;
+              overflow: auto;
+              margin-left: auto;
+              margin-right: auto;
+              position: relative;
+              top: 10%;
+              color: beige;
+              text-align: left;
+              padding-left: 10px;
+           }
+           .gradient1 {
+               background-image:
+                   linear-gradient(
+                  #004CFF, #5306F0
+               );            
+           }
+          .gradient {
+            background-color: #2b323f;
+            /* IE9, iOS 3.2+ */
+            background-image: url(data:image/svg+xml;base64,  PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiI     HByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUi PjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3     RvcCBzdG9wLWNvbG9yPSIjND  g1NTZjIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMxYjIxMmIiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjUiLz48c3RvcCBzdG9   wLWNvbG9yPSIjMT QxOTIyIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC41MSIvPjxzdG9wIHN0b3AtY29sb3I9IiMzNTNiNDUiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVu       dD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+            background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(72, 85, 108)),color-stop(0.5, rgb(27, 33, 43)),color-stop(0.51, rgb(20, 25, 34) ),     color-stop(1, rgb(53, 59, 69)));
+            /* Android 2.3 */
+            background-image: -webkit-repeating-linear-gradient(top,rgb(72, 85, 108) 0%,rgb(27, 33, 43) 50%,rgb(20, 25, 34) 51%,rgb(53, 59, 69) 100%);
+            /* IE10+ */
+            background-image: repeating-linear-gradient(to bottom,rgb(72, 85, 108) 0%,rgb(27, 33, 43) 50%,rgb(20, 25, 34) 51%,rgb(53, 59, 69) 100%);
+            background-image: -ms-repeating-linear-gradient(top,rgb(72, 85, 108) 0%,rgb(27, 33, 43) 50%,rgb(20, 25, 34) 51%,rgb(53, 59, 69) 100%);
+          }
+          /* IE8- CSS hack */
+          @media \0screen\,screen\9 {
+            .gradient {
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff48556c",endColorstr="#ff353b45",GradientType=0);
+            }
+          }
+::-webkit-input-placeholder {
+   color: lightslategrey;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: lightslategrey;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: lightslategrey;  
+}
+
+:-ms-input-placeholder {  
+   color: lightslategrey;  
+}          
+          .navMenu {
+  position: relative;
+  top: 22px;
+  width: 260px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.navMenuForm {
+    position: relative;
+    height: 28px;
+    width: 310px;
+/*    background-color: #4c0000;*/
+}
+.searchElements {
+  position: relative;
+  top: -4px;
+  left: 50px;
+}
+.searchInput {
+  font-family: roboto, serif;
+  font-size: 16px;
+  position: relative;
+  left: 118px;
+  width: 117px;
+  height: 28px;
+  padding: 4px;
+  color: #ffd700;
+  border: none;
+  background-color: #4c0000;
+  top: -26px;
+  text-align: center;
+}
+.homeBtn {
+  font-family: roboto, serif;
+  font-size: 16px;
+  position: relative;
+  left: 10px;
+  width: 90px;
+  height: 28px;
+  padding: 4px;
+  cursor: pointer;
+  text-align: center;
+  color:  lightslategrey;
+  border: none;
+  background-color: #4c0000;
+  top: -26px;
+}
+.addName {
+  font-family: roboto, serif;
+  font-size: 16px;
+  position: relative;
+  left: 67px;
+  width: 90px;
+  height: 28px;
+  padding: 4px;
+  cursor: pointer;
+  text-align: center;
+  color:  lightslategrey;
+  border: none;
+  background-color: #4c0000;
+  top: -26px;
+}
+.navMenuElements {
+  position: relative;
+  left: 0;
+  width: 420px;
+}
+.submitButton {
+  position: relative;  
+  left: 89px;
+  width: 25px;
+  height: 23px;
+  background-color: #4c0000;
+  top: -18px;
+}
+.navDiv {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  left: -100px;;
+}
+/* unvisited link */
+a:link {
+    color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+  </style>
+  <!-- <link rel="stylesheet" type="text/css" href="/css/custom.css">-->
+  <link rel="stylesheet" type="text/css" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css" />
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="/js/main.js"></script>
+  
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body class="listColumn">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+		<div class="bdayList">
+			<h1> <%= title %></h1>
+    </div>
+        
+			<div class="container gradient1">		
+ 	        	<div class="content">   
+                    <% for (var i = 0; i < bDays.length; i++) { %>	        		
+                  <p><%= bDays[i].FirstName %> <%= bDays[i].MiddleInit %> <a id=<%=  bDays[i]._id %> class="bold gold" href="/editBdayRoute/?target=<%=  bDays[i]._id %>" title ="View/Edit"><%= bDays[i].LastName %></a>, <%= bDays[i].bDayYYYY %>/<%= bDays[i].bDayMM %>/<%= bDays[i].bDayDD %> </p>
+        				       				
+				          <% } %>
+            </div>       
+			</div>
+      <div class="navDiv">       	
+      <form id="navMenuForm" class="navMenuForm" action="" method="post">
+        <div class="navMenu">
+            <div class="navMenuElements">
+              <input id="homeBtn" class="homeBtn" type="button" value="Home" name="home" title="Go Home" >
+              <input id="addName" class="addName" type="button" value="Add" name="add" title="Add Name" >                                
+              <input id="searchName" class="searchInput" type="search" name="target" placeholder="Search" title="Search for Name">
+              <input id="submitButton" class="submitButton" name="submit" type="image" src="../images/searchtool.png"     alt="Submit">
+            </div>
+        </div> 
+      </form>
+      </div>
+    
+    <script>
+        $(window).load(function(){
+          list();
+          $("#homeBtn").click(function(event){
+            var thisHost = window.location.host;                                    
+            window.location.replace("http://" + thisHost + "/main");
+          });
+          
+        });                
+    </script>
+  </body>
+</html>
