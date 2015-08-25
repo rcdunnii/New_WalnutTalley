@@ -7,14 +7,16 @@
                 position: fixed;
                 height: 100%;
                 width: 100%;
-                background: rgb(104,32,19); /* Old browsers */
-                background: -moz-linear-gradient(top,  rgba(104,32,19,1) 0%, rgba(139,69,19,1) 100%); /* FF3.6+ */
-                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(104,32,19,1)), color-stop(100%,rgba(139,69,19,1))); /* Chrome,Safari4+ */
-                background: -webkit-linear-gradient(top,  rgba(104,32,19,1) 0%,rgba(139,69,19,1) 100%); /* Chrome10+,Safari5.1+ */
-                background: -o-linear-gradient(top,  rgba(104,32,19,1) 0%,rgba(139,69,19,1) 100%); /* Opera 11.10+ */
-                background: -ms-linear-gradient(top,  rgba(104,32,19,1) 0%,rgba(139,69,19,1) 100%); /* IE10+ */
-                background: linear-gradient(to bottom,  rgba(104,32,19,1) 0%,rgba(139,69,19,1) 100%); /* W3C */
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#682013', endColorstr='#8b4513',GradientType=0 ); /* IE6-9 */
+                background-color: #778899;
+ /*             background-color: #789;
+                background: rgb(104,32,19); 
+                background: -moz-linear-gradient(top,  rgba(104,32,19,1) 0%, rgba(139,69,19,1) 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(104,32,19,1)), color-stop(100%,rgba(139,69,19,1)));
+                background: -webkit-linear-gradient(top,  rgba(104,32,19,1) 0%,rgba(139,69,19,1) 100%); 
+                background: -o-linear-gradient(top,  rgba(104,32,19,1) 0%,rgba(139,69,19,1) 100%); 
+                background: -ms-linear-gradient(top,  rgba(104,32,19,1) 0%,rgba(139,69,19,1) 100%);
+                background: linear-gradient(to bottom,  rgba(104,32,19,1) 0%,rgba(139,69,19,1) 100%); 
+           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#682013', endColorstr='#8b4513',GradientType=0 );  */
                 padding: 0;
                 margin: 0;
     }
@@ -129,7 +131,7 @@
         height: 37em;
         top: 10px;
         left:30%;
-        background-color: maroon;
+ /*       background-color: maroon;*/
   }
   
     .editBDayPage,
@@ -137,11 +139,13 @@
         position: relative;
         width: 95%;
         height: 95%;
-        background-color: #993300; 
+        background-image: linear-gradient( #004CFF, #5306F0 );
         top: 10px;
         left: 0;
         margin-right: auto;
-        margin-left: auto;        
+        margin-left: auto; 
+        border-radius: 25px;
+        border: 2px solid #8AC007;       
     } 
     
     

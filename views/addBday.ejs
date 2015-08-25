@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<title>Edit BirthDay</title>
+	
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="/css/BDay.css"/>
+ 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>  
+	<script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript">
+    $(function() { 
+         $('#editBDayForm:first *:input[type!=hidden]:first').focus();
+		 $.validator.addMethod('year', function (value, element) {		    
+				return this.optional(element) || (value.length == 4);
+		 }, 'Enter YYYY !');
+         // Handler for .ready() called.
+         $("#editBDayForm").validate({
+          rules: {
+                    FirstName: {
+                        required: true,
+                    },
+                    LastName: {
+                        required: true,
+                        minlength: 3
+                    },
+                    bDayYYYY: {
+					    required: false,
+                        year: true,
+                        digits : true
+                    },
+                    bDayMM: {
+                        required: true,
+                        minlength: 2,
+                        digits : true,
+                        range : [01,12]                        
+                    },
+                    bDayDD: {
+                        required: true,
+                        minlength: 2,
+                        digits : true,
+                        range : [01,31]
+                    }                   
+           },
+           messages : {
+                    FirstName: {
+                        required: "Must include first name"
+                    },                  
+                    LastName: {
+                        required: "Must include last name",
+                        minlength:"That's a name???!"
+                    },
+					bDayYYYY: {
+					    minlength: "Enter YYYY !"
+					},	
+                    bDayMM: {
+                        required: "Include Birth Month (MM)",
+                        minlength:"Needs 2 numbers!"
+                    },
+                    bDayDD: {
+                        required: "Include Birth Day of Month (DD)",
+                        minlength:"Needs 2 numbers!"
+                    }
+                },
+            });      
+          
+    });
+    </script>
+</head>
+<body>
+
+    <!-- this page is called by javascript function main line # 86 as editNut.html?value=walnutID&user=requester -->
+
+<div class="frameBDay">
+        <div class="addBDayPage">
+            <div class="center"><h1>Birthday Info!</h1></div>
+            <div class="center"><h3>Adding a Birthday</h3></div>
+            <form action="" method="POST" id="addBDayForm" >
+               <fieldset> 
+                <div class="center">
+ 
+                        <input type="hidden" name="_id" id="_id" />                         
+ 
+                        <ul>                        
+                            <li><label for="FirstName">First Name</label><input class="XX15" type="text" name="FirstName"  id="FirstName"  size="30"  maxlen="25" /></li>
+                            <li><label for="LastName">Last Name </label><input  class="XX25" type="text" name="LastName"   id="LastName"   size="30"  maxlen="25" /></li>
+                            <li><label for="MI">Middle I.</label><input         class="XX"   type="text" name="MI"         id="MI"         size="1"   maxlen="1"  /></li>
+                            <li><label for="bDayYYY">Born: YYYY</label><input   class="XXXX" type="text" name="bDayYYYY"   id="bDayYYYY"   size="4"   maxlen="4"  /></li>
+                            <li><label for="bDayMM">MM</label><input            class="XX"   type="text" name="bDayMM"     id="bDayMM"     size="2"   maxlen="2"  /></li>
+                            <li><label for="bDayDD">DD</label><input            class="XX"   type="text" name="bDayDD"     id="bDayDD"     size="2"   maxlen="2"  /></li>
+                       </ul>
+                       <fieldset class="submit">                        
+                            <input type="submit" name="btn" id="submit" value="Submit" />
+                            <input type="button" name="btn" id="reset" value="Reset" onclick="document.location.reload(true)" />
+                            <input type="button" name="btn" id="home" value="Back" onclick="window.history.back();" />
+                        </fieldset>
+                        <div class="center bottom">
+                            <p class="messages"><span id="editBDayResponse"></span></p>
+                        </div>
+                </div>
+               </fieldset>  
+            </form>
+        </div>
+	</div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#addBDayForm").submit(function(e){
+               e.preventDefault();
+                var newData = JSON.stringify($("#addBDayForm").serializeObject());
+               //console.log(newData);
+               jqxhr = $.ajax({ 
+                    'headers' : {'Content-Type' : 'application/json'},
+                    'processData' : false,     
+                   type: 'POST',
+                   // ContentType : "application/x-www-form-urlencoded",
+                    //ContentType : "application/json",
+                   data : newData, // data to be sent to server
+                   dataType: "text",  // type data expected back
+                   url: "/saveBdayData"
+               }).done(function(data) {                            
+                   var objson = $.parseJSON(data);
+                   console.log("data is: " + data + ", objson is: " + objson + ", objson.result is: " + objson.result);
+                   if (objson.result === "Success") {
+                      $(".messages").addClass('pinkClass').text(objson.result).fadeOut(5000, function() {
+                          $(this).removeClass('pinkClass').empty().show();
+                      });
+                   var thisHost = window.location.host;                                    
+                   window.location.replace("http://" + thisHost + "/mainChoice?main=listBdays");                                   
+     /*                var scrollPosition =  objson.positionID;
+                      $(".content").mCustomScrollbar("update");
+                      $(".content").mCustomScrollbar("scrollTo", scrollPosition);*/
+                   }
+               }).fail (function (jqxhr, status, error) {
+                       alert("error: " + error + " status: " + status + " jqxhr.responseText: " + jqxhr.responseText + " at line   149 editBday.ejs");
+               }); 
+            });
+        });
+    </script>
+    </body>
+
+</html>    

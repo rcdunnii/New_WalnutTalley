@@ -226,6 +226,12 @@ dotenv.load();
 
 	});			/* end app.post save edit/add data routine */
 
+	app.get('/addBdayRoute', function(req, res) {
+		res.render('addBday.ejs', {
+		});
+	});
+
+
 	app.get('/editBdayRoute', function(req, res) {
 		util.log('Request received: \nmethod: ' + req.method + '\nurl: ' + req.url);// this line logs just the method and url
 		var requestedIdtoEdit = req.param("target");
@@ -257,7 +263,7 @@ dotenv.load();
 		}
 		// CAN BE EDIT or ADD !!! If there is a postEditDoc._id field it is an EDIT!!!
 		var postEditDoc = req.body;
-		console.log("in saveBdayData where first name is " + postEditDoc.FirstName + " and _id is " + postEditDoc._id)
+		console.log("in saveBdayData where first name is " + postEditDoc.FirstName + " and _id is " + postEditDoc._id);
 	    if (postEditDoc._id)	{ //here if edit of pre-existing contact
 			myBdays.findOneAndUpdate({ "_id" : postEditDoc._id},				
 				{ $set: {
@@ -276,7 +282,7 @@ dotenv.load();
 					res.writeHead(200, { 					
 			    	'Content-Type': 'text/plain',
         		    'Access-Control-Allow-Origin': '*' });
-        		    console.log("in saveBdayData after apparent success in update of _id " + postEditDoc._id);
+        		    console.log("in saveBdayData after apparent success in update of  bDay with _id " + postEditDoc._id);
         		    var objToJson = {
         		    	"result" : "Success",
 						"positionID" : postEditDoc._id // used to scroll to new or edited item
@@ -317,7 +323,33 @@ dotenv.load();
 			 		});	/* END SAVE CONTACT   */														   
 			}   /* end if else add contact */
 
-	});	
+	});
+
+	 app.get('/rmBdayRoute', function(req, res) {		 
+        util.log('Request received: \nmethod: ' + req.method + '\nurl: ' + req.url);// this line logs just the method and url		
+		var rmRequestID = req.param("target");		
+		var rmResult;
+		myBdays.remove({_id: rmRequestID}, function (err, rmResult)	{			
+			 if (err) {			
+				res.writeHead(200, { 
+		    	'Content-Type': 'text/plain',
+        	    'Access-Control-Allow-Origin': '*' });// implementation of CORS 
+				res.end("Failed");	// add quotes to convert to string	
+			} else {
+ 			//mongoose.model('Bday').find({}, null, {sort:{LastName:1}}, function (err, bdays){			
+ 				Bdays.find({}, null, {sort:{LastName:1}}, function (err, bdays) {			 				
+				 	return  res.render('listBdays.ejs', {
+						    user : req.user.local.email,
+						    title : "List Birthdays",
+						    bDays: bdays,
+						    numBdays : bdays.length		    
+   						});
+     			})
+ 			}
+		
+			});
+		});
+	 
 
 	app.post('/search', function(req, res) {
         util.log('Request received: \nmethod: ' + req.method + '\nurl: ' + req.url);// this line logs just the method and url
