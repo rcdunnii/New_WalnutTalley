@@ -81,6 +81,9 @@
 
 :-ms-input-placeholder {  
    color: lightslategrey;  
+}
+.pinkClass {
+  background-color: #ffc0cb;
 }          
 .navMenu {
   position: relative;
@@ -100,7 +103,7 @@
   top: -4px;
   left: 50px;
 }
-.searchInput {
+#searchBday {
   font-family: roboto, serif;
   font-size: 16px;
   position: relative;
@@ -111,8 +114,7 @@
   color: #ffd700;
   border: none;
   background-color: #4c0000;
-  top: -26px;
-  text-align: center;
+  /*text-align: center;*/
 }
 .homeBtn {
   font-family: roboto, serif;
@@ -127,7 +129,6 @@
   color:  lightslategrey;
   border: none;
   background-color: #4c0000;
-  top: -26px;
 }
 .addName {
   font-family: roboto, serif;
@@ -142,7 +143,6 @@
   color:  lightslategrey;
   border: none;
   background-color: #4c0000;
-  top: -26px;
 }
 .navMenuElements {
   position: relative;
@@ -153,9 +153,9 @@
   position: relative;  
   left: 89px;
   width: 25px;
-  height: 23px;
+  height: 28px;
   background-color: #4c0000;
-  top: -18px;
+  top: 9px;
 }
 .navDiv {
   position: relative;
@@ -189,14 +189,36 @@ a:active {
 .bold {
   font-weight: bold;
 }
+.highlight {
+  background-color:#008000
+}
+.messages {
+  font-size: 26px;
+  font-weight: 100;
+  position: relative;
+  top: 59px;
+  width: 200px;
+  height: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  color: #f00;
+  border: #f00 1px;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
 
   </style>
   <!-- <link rel="stylesheet" type="text/css" href="/css/custom.css">-->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css" /> -->
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.0.7/jquery.mCustomScrollbar.css" type="text/css" />
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+/*  <script src="//cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.0.7/jquery.mCustomScrollbar.concat.min.js"></script> */
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
   <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="/js/main.js"></script>
   
@@ -213,38 +235,76 @@ a:active {
     </div>
         
 			<div class="container gradient1">		
- 	        	<div class="content">   
+ 	        	<div class="content">
+                 
                 <% for (var i = 0; i < bDays.length; i++) { %>	        		
-                  <p><%= bDays[i].FirstName %> <%= bDays[i].MiddleInit %> <a id="<%=  bDays[i]._id %>" class="bold gold" href="/editBdayRoute/?target=<%=  bDays[i]._id %>" title ="View/Edit"><%= bDays[i].LastName %></a>, <%= bDays[i].bDayYYYY %>/<%= bDays[i].bDayMM %>/<%= bDays[i].bDayDD %> <a href="/rmBdayRoute/?target=<%= bDays[i]._id%>" class="bold gold" title="Remove Birthday"><span class="trash" ><i class="fa fa-trash-o"></i></span></a> </p>      				       				
+                  <p id="BdayID<%= bDays[i]._id%>"><%= bDays[i].FirstName %> <%= bDays[i].MiddleInit %> <a id="<%=  bDays[i]._id %>" class="bold gold" href="/editBdayRoute/?target=<%=  bDays[i]._id %>" title ="View/Edit"><%= bDays[i].LastName %></a>, <%= bDays[i].bDayYYYY %>/<%= bDays[i].bDayMM %>/<%= bDays[i].bDayDD %> <a href="/rmBdayRoute/?target=<%= bDays[i]._id%>" class="bold gold" title="Remove Birthday"><span class="trash" ><i class="fa fa-trash-o"></i></span></a> </p>      				       				
 			          <% } %>
+               
             </div>       
-			</div>
-      <div class="navDiv">       	
-      <form id="navMenuForm" class="navMenuForm" action="" method="post">
-        <div class="navMenu">
-            <div class="navMenuElements">
-              <input id="homeBtn" class="homeBtn" type="button" value="Home" name="home" title="Go Home" >
-              <input id="addName" class="addName" type="button" value="Add" name="add" title="Add Name" >                                
-              <input id="searchName" class="searchInput" type="search" name="target" placeholder="Search" title="Search for Name">
-              <input id="submitButton" class="submitButton" name="submit" type="image" src="../images/searchtool.png"     alt="Submit">
-            </div>
-        </div> 
-      </form>
+			
+          <div class="navDiv">       	
+            <form id="navMenuForm" class="navMenuForm" action="" method="post">
+              <div class="navMenu">
+                  <div class="navMenuElements">
+                    <input id="homeBtn" class="homeBtn" type="button" value="Home" name="home" title="Go Home" >
+                    <input id="addName" class="addName" type="button" value="Add" name="add" title="Add Name" >                                
+                    <input id="searchBday" class="searchInput" type="search" name="target" placeholder="Search" title="Search for Name">
+                    <input id="submitButton" class="submitButton" name="submit" type="image" src="../images/searchtool.png"     alt="Submit">
+                  </div>
+              </div> 
+            </form>
+          </div>
       </div>
+      <div class="messages"></div>
     
     <script>
         $(window).load(function(){
           list();
           var thisHost = window.location.host; 
-          $("#homeBtn").click(function(event){                                               
+          $("#homeBtn").click(function(event){
+            $(".highlight").removeClass("highlight"); // in case a search had been done leaving a hilited sirname                                               
             window.location.replace("http://" + thisHost + "/main");
           });
           $("#addName").click(function(event) {
+            $(".highlight").removeClass("highlight"); // in case a search had been done leaving a hilited sirname
             var thisHost = window.location.host;
             window.location.replace("http://" + thisHost + "/addBdayRoute");
           });
-          
-        });                
+          $("#navMenuForm").submit(function(event) {           
+              event.preventDefault();
+              var searchData = $("#searchBday").val(), jqxhr; 
+              if (!searchData) {
+                  $(".messages").addClass('pinkClass').text("Must enter Name").fadeOut(2000, function(){
+                      $(this).removeClass('pinkClass').empty().show();                              
+                  });                        
+                  return; 
+              }
+              jqxhr = $.ajax({               
+                  'headers' : {'Content-Type' : 'application/json'},
+                  'processData' : false,            
+                  type: 'POST',
+                  data : JSON.stringify({'target' : searchData}), // data to be sent to server
+                  dataType: "text",  // type data expected back
+                  url: "/searchBdays"              
+                  }).done(function(returnedID) {
+                      if (returnedID === "No match") {
+                          $(".messages").addClass('pinkClass').text(returnedID).fadeOut(5000, function(){
+                              $(this).removeClass('pinkClass').empty().show(); 
+                          });
+                          $("#searchBday").val("");                         
+                      } else {                    
+                          var position = "#BdayID" + returnedID; // <p> element has id of "BdayID" + returnedID
+                          $("#BdayID" + returnedID).addClass("highlight"); // anchor link has id=returnedID
+                          $(".messages").text("");                          
+                          $(".content").mCustomScrollbar("scrollTo", position);
+                          $("#searchName").val("");                                
+                     }
+                  }).fail ( function (jqxhr, status, error) {
+                      alert("error: " + error + " status: " + status + " jqxhr.responseText: " + jqxhr.responseText + " at line 158 listNuts.ejs");
+                  });  
+              }); /* navMenuForm submit */ 
+        });       /* window load */          
     </script>
   </body>
 </html>

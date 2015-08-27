@@ -169,7 +169,7 @@
                         type: 'POST',
                         data : JSON.stringify({'target' : searchData}), // data to be sent to server
                         dataType: "text",  // type data expected back
-                        url: "/search"              
+                        url: "/searchContacts"              
                         }).done(function(returnedID) {
                             if (returnedID === "No match") {
                                 $(".messages").addClass('pinkClass').text(returnedID).fadeOut(5000, function(){

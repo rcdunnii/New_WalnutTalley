@@ -344,21 +344,40 @@ dotenv.load();
 						    bDays: bdays,
 						    numBdays : bdays.length		    
    						});
-     			})
+     			});
  			}
 		
 			});
 		});
 	 
 
-	app.post('/search', function(req, res) {
+	app.post('/searchContacts', function(req, res) {
         util.log('Request received: \nmethod: ' + req.method + '\nurl: ' + req.url);// this line logs just the method and url
  		var matchedItem = {};
  		var resultString = "";
 		var searchRequest = req.body.target;
 		myContacts.findOne({'SirName': new RegExp('^'+searchRequest+'.*', "i") }, function (err, matchedItem){			
-			if (!matchedItem){
-				
+			if (!matchedItem){				
+				resultString = "No match";
+			}
+			if (err) {
+				console.log(err);
+				res.redirect('/main');
+			}
+            res.writeHead(200, { 
+		    	'Content-Type': 'text/plain',
+        	    'Access-Control-Allow-Origin': '*' });// implementation of CORS 
+	 		res.end(matchedItem ? matchedItem._id + '' : resultString);
+		});			 
+	});
+
+	app.post('/searchBdays', function(req, res) {
+        util.log('Request received: \nmethod: ' + req.method + '\nurl: ' + req.url);// this line logs just the method and url
+ 		var matchedItem = {};
+ 		var resultString = "";
+		var searchRequest = req.body.target;
+		Bdays.findOne({'LastName': new RegExp('^'+searchRequest+'.*', "i") }, function (err, matchedItem){			
+			if (!matchedItem){				
 				resultString = "No match";
 			}
 			if (err) {
