@@ -25,24 +25,25 @@
   			  	top: 50px; 				
           }
           .container {
-             width: 268px;
-             height: 300px;
-             margin-left: auto;
-             margin-right: auto;
-             margin-top: 100px;
-             border-radius: 4px;
+            width: 434px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            border-radius: 4px
           }
           .content {
-              height: 250px;
-              width: 227px;
-              overflow: auto;
-              margin-left: auto;
-              margin-right: auto;
-              position: relative;
-              top: 10%;
-              color: beige;
-              text-align: left;
-              padding-left: 10px;
+             height: 250px;
+             width: 308px;
+             overflow: auto;
+             margin-left: auto;
+             margin-right: auto;
+             position: relative;
+             top: 10%;
+             color: beige;
+             text-align: left;
+             padding-left: 10px;
+             border: 1px solid slategray;
            }
            .gradient1 {
                background-image:
@@ -83,7 +84,7 @@
    color: lightslategrey;  
 }
 .pinkClass {
-  background-color: #ffc0cb;
+  background-color: #4c0000;
 }          
 .navMenu {
   position: relative;
@@ -162,7 +163,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 200px;
-  left: -100px;;
+  left: -118px;;
 }
 /* unvisited link */
 a:link {
@@ -206,7 +207,8 @@ a:active {
   border: #f00 1px;
 }
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px white inset;
+    -webkit-box-shadow: 0 0 0 1000px #4c0000 inset;
+    -webkit-text-fill-color: gold !important;
 }
 
   </style>
@@ -217,10 +219,13 @@ input:-webkit-autofill {
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.0.7/jquery.mCustomScrollbar.css" type="text/css" />
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-/*  <script src="//cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.0.7/jquery.mCustomScrollbar.concat.min.js"></script> */
+<!--  <script src="//cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.0.7/jquery.mCustomScrollbar.concat.min.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
   <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="/js/main.js"></script>
+  <script type="text/javascript">
+  
+  </script>
   
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -236,9 +241,15 @@ input:-webkit-autofill {
         
 			<div class="container gradient1">		
  	        	<div class="content">
-                 
-                <% for (var i = 0; i < bDays.length; i++) { %>	        		
-                  <p id="BdayID<%= bDays[i]._id%>"><%= bDays[i].FirstName %> <%= bDays[i].MiddleInit %> <a id="<%=  bDays[i]._id %>" class="bold gold" href="/editBdayRoute/?target=<%=  bDays[i]._id %>" title ="View/Edit"><%= bDays[i].LastName %></a>, <%= bDays[i].bDayYYYY %>/<%= bDays[i].bDayMM %>/<%= bDays[i].bDayDD %> <a href="/rmBdayRoute/?target=<%= bDays[i]._id%>" class="bold gold" title="Remove Birthday"><span class="trash" ><i class="fa fa-trash-o"></i></span></a> </p>      				       				
+                <% 
+                  var monthStrings = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                    function convertMMtoStr(mm) {
+                     return monthStrings[mm - 1];
+                    }
+                %>
+                <% for (var i = 0; i < bDays.length; i++) { %>
+                  <% var monthStr = convertMMtoStr(bDays[i].bDayMM); %>
+                  <p id="BdayID<%= bDays[i]._id%>"><%= bDays[i].FirstName %> <%= bDays[i].MiddleInit %> <a id="<%=  bDays[i]._id %>" class="bold gold" href="/editBdayRoute/?target=<%=  bDays[i]._id %>" title ="View/Edit"><%= bDays[i].LastName %></a> : <%= bDays[i].bDayYYYY %> <%= monthStr %> <%= bDays[i].bDayDD %> <a href="/rmBdayRoute/?target=<%= bDays[i]._id%>" class="bold gold" title="Remove Birthday"><span class="trash" ><i class="fa fa-trash-o"></i></span></a> </p>      				       				
 			          <% } %>
                
             </div>       
