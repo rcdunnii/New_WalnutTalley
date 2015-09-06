@@ -137,8 +137,8 @@
     .editBDayPage,
     .addBDayPage {
         position: relative;
-        width: 95%;
-        height: 95%;
+        width: 60%;
+        height: 80%;
         background-image: linear-gradient( #004CFF, #5306F0 );
         top: 10px;
         left: 0;
@@ -208,7 +208,7 @@
         background-color: transparent;
     }
  
-    fieldset {
+    .bDayInfo {
         float: left;
         clear: left;
         width: 87%;
@@ -218,7 +218,7 @@
         border:none;
     } 
     
-    fieldset li {
+    li {
         float: left;
         clear: left;
         width: 100%;
@@ -250,12 +250,26 @@
     input#submit,
     input#reset,
     input#home,
-    input#again
-      {
-       margin-right:10px;
+    input#delete {
+      background-color:  #4c0000;
+      color: gold;
+      margin-right:10px;
+      border: none;
+      cursor: pointer;
+      width: 75px;
     }
     
-    
+    .buttons {
+      position: relative;
+      display: inline-block;
+      width: 350px;
+      height: 30px;
+      top: 70px;
+      left: 46px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .XX     /* 2 char input box */
        {
         font-size: 18px;
@@ -277,7 +291,7 @@
     .XX25 /* 25 char input box */
        {
        font-size: 18px;
-       width: 225px;
+       width: 136px;
     }
     
     .navlist {

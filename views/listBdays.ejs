@@ -210,6 +210,8 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #4c0000 inset;
     -webkit-text-fill-color: gold !important;
 }
+.split-para      { display:block;float:left;margin:10px;}
+.dateStr         { display:inline-block;float:right;width:30%;margin-left:10px;}
 
   </style>
   <!-- <link rel="stylesheet" type="text/css" href="/css/custom.css">-->
@@ -249,7 +251,7 @@ input:-webkit-autofill {
                 %>
                 <% for (var i = 0; i < bDays.length; i++) { %>
                   <% var monthStr = convertMMtoStr(bDays[i].bDayMM); %>
-                  <p id="BdayID<%= bDays[i]._id%>"><%= bDays[i].FirstName %> <%= bDays[i].MiddleInit %> <a id="<%=  bDays[i]._id %>" class="bold gold" href="/editBdayRoute/?target=<%=  bDays[i]._id %>" title ="View/Edit"><%= bDays[i].LastName %></a> : <%= bDays[i].bDayYYYY %> <%= monthStr %> <%= bDays[i].bDayDD %> <a href="/rmBdayRoute/?target=<%= bDays[i]._id%>" class="bold gold" title="Remove Birthday"><span class="trash" ><i class="fa fa-trash-o"></i></span></a> </p>      				       				
+                  <p id="BdayID<%= bDays[i]._id%>"><%= bDays[i].FirstName %> <%= bDays[i].MiddleInit %> <a id="<%=  bDays[i]._id %>" class="bold gold" href="/editBdayRoute/?target=<%=  bDays[i]._id %>" title ="View/Edit/Delete"><%= bDays[i].LastName %></a> : <span class="dateStr"> <%= bDays[i].bDayYYYY %> <%= monthStr %> <%= bDays[i].bDayDD %></span></p> 
 			          <% } %>
                
             </div>       

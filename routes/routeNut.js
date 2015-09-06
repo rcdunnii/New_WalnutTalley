@@ -325,9 +325,9 @@ dotenv.load();
 
 	});
 
-	 app.get('/rmBdayRoute', function(req, res) {		 
+	 app.post('/rmBdayRoute', function(req, res) {		 
         util.log('Request received: \nmethod: ' + req.method + '\nurl: ' + req.url);// this line logs just the method and url		
-		var rmRequestID = req.param("target");		
+		var rmRequestID = req.body.target;		
 		var rmResult;
 		myBdays.remove({_id: rmRequestID}, function (err, rmResult)	{			
 			 if (err) {			
@@ -336,19 +336,25 @@ dotenv.load();
         	    'Access-Control-Allow-Origin': '*' });// implementation of CORS 
 				res.end("Failed");	// add quotes to convert to string	
 			} else {
- 			//mongoose.model('Bday').find({}, null, {sort:{LastName:1}}, function (err, bdays){			
- 				Bdays.find({}, null, {sort:{LastName:1}}, function (err, bdays) {			 				
+ 				/*Bdays.find({}, null, {sort:{LastName:1}}, function (err, bdays) {			 				
 				 	return  res.render('listBdays.ejs', {
 						    user : req.user.local.email,
 						    title : "List Birthdays",
 						    bDays: bdays,
 						    numBdays : bdays.length		    
    						});
-     			});
- 			}
-		
-			});
+     			});*/
+				res.writeHead(200, { 					
+ 		  			'Content-Type': 'text/plain',
+		    		'Access-Control-Allow-Origin': '*' });
+ 		 		var objToJson = {
+	    			"result" : "Success",
+				};
+	    		console.log("in rmBdayRoute after apparent success in deletion of bday");
+				res.end(JSON.stringify(objToJson));	
+ 			}	
 		});
+	});
 	 
 
 	app.post('/searchContacts', function(req, res) {
