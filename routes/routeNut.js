@@ -432,7 +432,7 @@ dotenv.load();
 		var auth = {
 		 auth: {
 		 	// need to encrypt!!!
-	//	   api_key: 'key-0f4c723fa96c59328c9659405d0f14aa', //MAILGUN_API_KEY,
+	//	   api_key: '', //MAILGUN_API_KEY,
 	//	   domain: 'one of your domain names listed at your https://mailgun.com/app/domains'
 	//	   domain: 'mail.ourchestnuts.com'
 			api_key  : configAuth.mailGunAuth.api_key,
