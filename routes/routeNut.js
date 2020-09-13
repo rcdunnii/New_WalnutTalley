@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module.exports    = function(app, passport) {
 var mongoose      = require('mongoose');
 var util          = require('util');
