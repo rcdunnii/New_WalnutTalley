@@ -38,7 +38,7 @@
     "mongoose": "^5.10.4",
     "morgan": "^1.9.1",
     "nconf": "^0.7.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-inspect": "^1.11.6",
     "nodemailer": "^1.11.0",
     "nodemailer-mailgun-transport": "^1.0.1",
