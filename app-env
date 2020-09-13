@@ -1,0 +1,16 @@
+export NODE_ENV=development
+export PORT=8080
+export DOMAIN="ourchestnuts.com"
+export # same as MAILGUN_KEY below - need to remove one or the other
+export API_KEY=key-0f4c723fa96c59328c9659405d0f14aa
+#secure-env secret key used to hash the .env variables
+export SECURE-ENV-KEY="mySecure-env1!"
+# mongo chestnuts db owner = secure followed by encrypted pw
+export API_URL="mongodb://secure:iE5yOyOKYt99uSZq7bTM@ds027751.mlab.com:27751/chestnuts"
+#mongodb chestnuts user secure password below
+export MONGO_USER_PW=iE5yOyOKYt99uSZq7bTM
+export MAIL_DOMAIN = "mail.ourchestnuts.com"
+export MAILGUN_KEY=key-0f4c723fa96c59328c9659405d0f14aa
+# reCaptcha variables
+export SITE_KEY=6LeBOM4UAAAAAC14bwSvFo2N1WYPwoxqu1adXObT
+export SECRET_KEY=6LeBOM4UAAAAACtrtVNmSDGlZ4AMPNgEgltPPDJO

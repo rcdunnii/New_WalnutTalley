@@ -27,8 +27,8 @@
 					<div class="mainAdd"> <!-- class="mainMenu" -->
 						<form class="addForm" action="/addContact" method="get">
 							<fieldset class="mainField">
-							  "_id": Schema.ObjectId,
-     "visibility": String,
+<!-- "_id": Schema.ObjectId,
+     "visibility": String, 
      "SirName": String,
      "Names": String,
      "FormalNames": String,
@@ -36,10 +36,22 @@
      "Address": [ {
 		addr_field: String
      	} ],
- <!--     "Addr1": String,
+      "Addr1": String,
      "Addr2": String,
      "Addr3": String,
-     "Addr4": String, -->
+     "Addr4": String, 
+	 
+	  [ {"_id": Schema.ObjectId},  
+         {   
+           "street"         : String,         
+           "city"          : String,
+           "state"         : String,
+           "country"       : String,
+           "zip"           : String
+        }        
+      ]
+	  
+	  
      "Email": [{
      	emailAddr : String
      	}],
@@ -49,18 +61,57 @@
      "Notes": String,
      "Created": Date,
      "Updated": Date
+	 -->
+	 
+								<input id="_id" type="hidden" name="_id">
+                                <input id="walnutID" type="hidden" name="walnutID">
+                                <input id="visibility" type="hidden" name="visibility">
+								 
 								<label class="label" for="SirName">Sir Name</label><br>	
 								<input class="addContact" type="text" name="SirName" value="" id="SirName">
 
 								<label class="label" for="Names">Names</label><br>	
 								<input class="addContact" type="text" name="Names" value="" id="Names">
 								
-								<label class="label" for="Children">Children</label><br>	
-								<input class="addContact" type="text" name="children" value="" id="Children">
-
 								<label class="label" for="formalNames">Formal Names</label><br>	
 								<input class="addContact" type="text" name="formalNamesames" value="" id="formalNames">
-
+								
+								<label class="label" for="Children">Children</label><br>	
+								<input class="addContact" type="text" name="children" value="" id="Children">
+								
+								<label class="label" for="street">Street Address</label><br>
+								<input class="addContact" type="text" name="street" value="" id= "street">
+								
+								<label class="label" for="City">City</label><br>
+								<input class="addContact" type="text" name="city" value="" id= "city">
+								
+								<label class="label" for="State">State/Province</label><br>
+								<input class="addContact" type="text" name="state" value="" id= "state">
+								
+								<label class="label" for="Country">Country </label><br>
+								<input class="addContact" type="text" name="country" value="" id= "country">
+								
+								<label class="label" for="Zip">Zip</label><br>
+								<input class="addContact" type="text" name="zip " value="" id= "zip">
+								
+								<label class="label" for="email1">Preferred Email</label><br>
+								<input class="addContact" type="email" name="email1" value="" id= "email1">
+								
+								<label class="label" for="email2">Alt Email</label><br>
+								<input class="addContact" type="email" name="email2" value="" id= "email2">
+								
+								<label class="label" for="phone1">Phone</label><br>
+								<input class="addContact" type="text" name="phone1" value="" id= "phone1">
+								
+								<label class="label" for="phone2">Alt Phone</label><br>
+								<input class="addContact" type="text" name="phone2" value="" id= "phone2">
+								
+								<label class="editNotesLabel" for="notes">Notes</label><br>                                    
+                                <textarea id="notes" class="noscrollbars editNotes" name="notes" onkeyup="autoGrow(this);"></textarea>
+								
+								<input id="created" type="hidden" value="" name="created">
+                                <input id="updated" type="hidden" value="" name="updated"> 
+								
 								<input class="mainSubmit" type="submit" value="Submit">
 							</fieldset>
 						</form>

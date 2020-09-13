@@ -1,0 +1,216 @@
+/* list Birthdays Custom css */
+        .listColumn {
+          position: relative; 
+          width:  100%;
+          height: 100%;
+          background-color: #789;      
+        }
+        /* <!-- <style media="screen"> --> */
+          .bdayList {
+            width: 200px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 15px;
+          }  
+          .container {
+            width: 434px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            border-radius: 4px
+          }
+          
+          .content {
+             height: 250px;
+             width: 308px;
+             overflow: auto;
+             margin-left: auto;
+             margin-right: auto;
+             position: relative;
+             top: 10%;            
+             text-align: left;
+             padding-left: 10px;
+             border:3px solid #daa520;-webkit-border-radius:20px;-moz-border-radius:20px;border-radius:20px;background-color:#000;
+             background-color: black;
+             color: #ffd700;
+             text-align: left;
+             padding-left: 10px;                        
+           }
+       /*    .gradient1 {
+              background-color: #000;
+              color: #ffa500; orange names
+            }
+           .blackBg{background-color:#000;color:#ffd700}
+               // background-image:
+               //    linear-gradient(
+               //   #004CFF, #5306F0
+               //);      */       
+         
+          .gradient {
+            background-color: #2b323f;
+            /* IE9, iOS 3.2+ */
+            background-image: url(data:image/svg+xml;base64,  PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiI     HByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUi PjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3     RvcCBzdG9wLWNvbG9yPSIjND  g1NTZjIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMxYjIxMmIiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjUiLz48c3RvcCBzdG9   wLWNvbG9yPSIjMT QxOTIyIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC41MSIvPjxzdG9wIHN0b3AtY29sb3I9IiMzNTNiNDUiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVu       dD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+            background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(72, 85, 108)),color-stop(0.5, rgb(27, 33, 43)),color-stop(0.51, rgb(20, 25, 34) ),     color-stop(1, rgb(53, 59, 69)));
+            /* Android 2.3 */
+            background-image: -webkit-repeating-linear-gradient(top,rgb(72, 85, 108) 0%,rgb(27, 33, 43) 50%,rgb(20, 25, 34) 51%,rgb(53, 59, 69) 100%);
+            /* IE10+ */
+            background-image: repeating-linear-gradient(to bottom,rgb(72, 85, 108) 0%,rgb(27, 33, 43) 50%,rgb(20, 25, 34) 51%,rgb(53, 59, 69) 100%);
+            background-image: -ms-repeating-linear-gradient(top,rgb(72, 85, 108) 0%,rgb(27, 33, 43) 50%,rgb(20, 25, 34) 51%,rgb(53, 59, 69) 100%);
+          }
+          /* IE8- CSS hack */
+          @media \0screen\,screen\9 {
+            .gradient {
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff48556c",endColorstr="#ff353b45",GradientType=0);
+            }
+          }
+::-webkit-input-placeholder {
+   color: lightslategrey;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: lightslategrey;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: lightslategrey;  
+}
+
+:-ms-input-placeholder {  
+   color: lightslategrey;  
+}
+.pinkClass {
+  background-color: #4c0000;
+}          
+.navMenu {
+  position: relative;
+  top: 22px;
+  width: 260px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.navMenuForm {
+    position: relative;
+    height: 28px;
+    width: 310px;
+/*    background-color: #4c0000;*/
+}
+.searchElements {
+  position: relative;
+  top: -4px;
+  left: 50px;
+}
+#searchBday {
+  font-family: roboto, serif;
+  font-size: 16px;
+  position: relative;
+  left: 118px;
+  width: 117px;
+  height: 28px;
+  padding: 4px;
+  color: #ffd700;
+  border: none;
+  border-radius: 3px;
+  background-color: #4c0000;
+  /*text-align: center;*/
+}
+.homeBtn {
+  font-family: roboto, serif;
+  font-size: 16px;
+  position: relative;
+  left: 10px;
+  width: 90px;
+  height: 28px;
+  padding: 4px;
+  cursor: pointer;
+  text-align: center;
+  color:  lightslategrey;
+  border: none;
+  border-radius: 3px;
+  background-color: #4c0000;
+}
+.addName {
+  font-family: roboto, serif;
+  font-size: 16px;
+  position: relative;
+  left: 67px;
+  width: 90px;
+  height: 28px;
+  padding: 4px;
+  cursor: pointer;
+  text-align: center;
+  color:  lightslategrey;
+  border: none;
+  border-radius: 3px;
+  background-color: #4c0000;
+}
+.navMenuElements {
+  position: relative;
+  left: 0;
+  width: 420px;
+}
+.submitButton {
+  position: relative;  
+  left: 89px;
+  width: 25px;
+  height: 28px;
+  border-radius: 3px;
+  background-color: #4c0000;
+  top: 9px;
+}
+.navDiv {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  left: -118px;;
+}
+/* unvisited link */
+a:link {
+    color: #ffb100;
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+.gold {
+  color: #ffd700;
+}
+.bold {
+  font-weight: bold;
+}
+.highlight {
+  background-color:#008000
+}
+.messages {
+  font-size: 26px;
+  font-weight: 100;
+  position: relative;
+  top: 59px;
+  width: 200px;
+  height: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  color: #f00;
+  border: #f00 1px;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #4c0000 inset;
+    -webkit-text-fill-color: gold !important;
+}
+.split-para      { display:block;float:left;margin:10px;}
+.dateStr         { display:inline-block;float:right;width:30%;margin-left:10px;}

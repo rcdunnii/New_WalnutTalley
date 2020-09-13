@@ -33,30 +33,7 @@
 				margin-left: auto;
             }
       
-	#addBDayForm  label.error,
-	#editBDayForm  label.error {
-		display: block;
-		float: left;
-		color: red;
-		height: 20px;    
-		width: 250px;                
-		margin-right: 10px;       
-		margin-left: 10px;                                        
-		font: bold 16px arial;
-		text-align: left;
-    }
-    
-    #editBDayForm input,
-    #addBDayForm  input    
-      {
-        display: block;
-        float:left;
-        padding: 0;
-        height: 20px;        
-        background-color:white;
-        font: normal 18px serif;
-        border: 2px inset; 
-    }    
+	
       span.downPointer {
                -webkit-transform: rotate(90deg);
                -moz-transform: rotate(90deg);
@@ -134,19 +111,7 @@
  /*       background-color: maroon;*/
   }
   
-    .editBDayPage,
-    .addBDayPage {
-        position: relative;
-        width: 60%;
-        height: 80%;
-        background-image: linear-gradient( #004CFF, #5306F0 );
-        top: 10px;
-        left: 0;
-        margin-right: auto;
-        margin-left: auto; 
-        border-radius: 25px;
-        border: 2px solid #8AC007;       
-    } 
+ 
     
     
     
@@ -167,32 +132,87 @@
         width: 100%;
         margin-right: auto;
         margin-right: auto; 
-        height: 5em;
+        height: 3em;
     }
     
     .center.bottom {
-        top: 1em;
+        top: 6em;
     }
     
     .center h1, .center h3 {
         position: relative;
         width: 320px;
-        color: yellow;
+        color: #ffd700;
         margin-left: auto;
         margin-right: auto;
         margin-top: 10px;
         padding-top: 2em;
         text-align: center;
     }
-    
-    #editBDayForm,
-    #addBDayForm {
+  
+/*    #editBDayForm input,
+      #addBDayForm  input    
+      {
         display: block;
-        width: 47em;
+        float:left;
+        padding: 0;
+        height: 20px;        
+        background-color:white;
+        font: normal 18px serif;
+        border: 2px inset; 
+    } 
+*/	
+    .editBDayPage,
+    .addBDayPage {
+        position: relative;
+        width: 60%;
+        height: 80%;
+        background-color: black;
+        top: 10px;
+        left: 0;
         margin-right: auto;
-        margin-left: auto;
-     }
+        margin-left: auto; 
+        border-radius: 25px;
+        border: 2px solid #ffd700;       
+    } 
+	
+    #editBDayForm, #addBDayForm {
+    position: absolute;
+    /* display: block; */
+    /* position: relative; */
+    top: 175px;
+    width: 25em;
+    margin-right: auto;
+    margin-left: auto;
+    height: 250px;
+	}
 
+    #editBDayForm label,
+    #addBDayForm  label   
+      {
+        display: block;
+        width: 100px;
+        float: left;
+        height: 20px;
+        text-align: left;
+        margin-right: 10px;
+        font: bold 16px arial;
+        color: #ffd700;
+    }
+
+    #addBDayForm  label.error,
+	#editBDayForm  label.error {
+		display: block;
+		float: left;
+		color: red;
+		height: 20px;    
+		width: 250px;                
+		margin-right: 10px;       
+		margin-left: 10px;                                        
+		font: bold 16px arial;
+		text-align: left;
+    }	
+	
     span.error{
         color: red; 
     }
@@ -226,39 +246,100 @@
         margin: 5px 2px;
     }
     
-    #editBDayForm label,
-    #addBDayForm  label   
-      {
-        display: block;
-        width: 100px;
-        float: left;
-        height: 20px;
-        text-align: left;
-        margin-right: 10px;
-        font: bold 16px arial;
-        color: yellow;
-    }
-  
-    fieldset.submit {
-        float: none;
-        width: auto;
-        border: 0 none #FFF;
-        padding-left: 11em;
-        padding-top: 2em;
-    }
     
-    input#submit,
-    input#reset,
-    input#home,
-    input#delete {
+	fieldset.data {
+		border : none;
+		font-style : Georgia, serif;
+		color : black;
+	}
+	
+    fieldset.buttons {
+      position: absolute;
+      left: 20px;
+      top: 328px;
+      float: none;
+      width: 175px;
+      border: 0 none #FFF;
+      padding-left: 11em;
+      padding-top: 2em;
+}
+    
+
+    .home_button {
+	  position : relative;
+	  left : -100px;
       background-color:  #4c0000;
       color: gold;
       margin-right:10px;
       border: none;
       cursor: pointer;
       width: 75px;
+      border-radius: 3px;
     }
-    
+	
+    .delete_button {
+	  position : relative;
+	  left : -100px;
+      background-color: #4c0000;
+      color: gold;
+      margin-right:10px;
+      border: none;
+      cursor: pointer;
+      width: 75px;
+      border-radius: 3px;
+    }
+	
+   .submit_button {
+    position: relative;
+    left: -43px;
+	top: 0px;
+    background-color: #4c0000;
+    color: gold;
+    border: none;
+	cursor: pointer;
+    width: 75px;
+    border-radius: 3px;
+}
+	
+    .reset_button{
+	  position : relative;	  
+      left: -23px;
+      top: 0px;
+      background-color: #4c0000;
+      color: gold;
+      margin-right:10px;
+      border: none;
+      cursor: pointer;
+      width: 75px;
+      border-radius: 3px;
+    }
+	
+	.back_button {
+	  position : relative;     
+      left: 100px;
+      top: 0px;	  
+      background-color: #4c0000;
+      color: gold;
+      margin-right:10px;
+      border: none;
+      cursor: pointer;
+      width: 75px;
+      border-radius: 3px;
+    }
+	
+ .back_button_addBday {
+    position: relative;
+    display: inline-block;
+    left: -11px;
+    top: 0px;
+    background-color: #4c0000;
+    color: gold;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    width: 75px;
+    border-radius: 3px;
+}
     .buttons {
       position: relative;
       display: inline-block;
@@ -268,18 +349,31 @@
       left: 46px;
       margin-left: auto;
       margin-right: auto;
+      border-radius: 3px;
     }
 
+    .buttons_addBday {
+    position: relative;
+    display: inline-block;
+    width: 350px;
+    height: 30px;
+    top: 70px;
+    left: 87px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+}
+	
     .XX     /* 2 char input box */
        {
         font-size: 18px;
-        width: 18px;
+        width: 20px;
     }
     
     .XXXX  /* 4 char input box */
       {
         font-size: 18px;
-        width: 36px;
+        width: 40px;
     }
     
     .XX15 /* 15 char input box */

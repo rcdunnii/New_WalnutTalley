@@ -9,8 +9,11 @@
 		        <meta name="description" content="">
 		        <meta name="viewport" content="width=device-width, initial-scale=1">
 				<TITLE>List Nuts Main Menu</TITLE>
-				<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-   		 		<link rel="stylesheet" type="text/css" href="css/custom.css">
+				<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+				<link rel="stylesheet" type="text/css" href="css/custom.css">
+				<link rel="shortcut icon" href="/images/favicon.ico">
+				<script src="https://www.google.com/recaptcha/api.js?render=6LeBOM4UAAAAAC14bwSvFo2N1WYPwoxqu1adXObT"}></script>
+					
 		    </head>
 		    <body class="mainBody">
 		    <div class="mainHeader">
@@ -36,9 +39,17 @@
 								<div class="mainInput">
 								<input class="mainSubmit" type="submit" value="Submit">
 								</div>
-							</fieldset>
+								<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response"/>
+							</fieldset>							
 						</form>
 					</div><!-- class="mainMenu" -->
 				</div><!-- div class="mainMenuWrapper" -->
+				<script>                    
+					grecaptcha.ready(function() {
+					   grecaptcha.execute('6LeBOM4UAAAAAC14bwSvFo2N1WYPwoxqu1adXObT', {action: '/mainChoice'}).then(function(token) {						  
+						  document.getElementById('g-recaptcha-response').value = token;
+						}); 
+					 });                   
+				 </script>
 		    </body>
 		</html>		

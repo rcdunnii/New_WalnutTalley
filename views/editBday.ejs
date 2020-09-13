@@ -8,9 +8,9 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <link rel="stylesheet" href="/css/BDay.css"/>
  
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>  
 	<script type="text/javascript" src="/js/main.js"></script>
     <script type="text/javascript">
     $(function() { 
@@ -83,17 +83,17 @@
     <div class="editBDayPage">
         <div class="center"><h1>Birthday Info!</h1></div>
         <div class="center"><h3>Editing Birthday</h3></div>
-        <form action="" method="POST" id="editBDayForm" >
+        <for m action="" method="POST" id="editBDayForm" >
           <fieldset class="bDayInfo"> 
             <div class="center"> 
               <input type="hidden" name="_id" id="_id" value="<%=_id %>" />                         
                 <ul>                        
                   <li><label for="FirstName">First Name</label><input class="XX15" type="text" name="FirstName"  id="FirstName"  value= "<%= fname %>" size="30"  maxlen="25" /></li>
                   <li><label for="LastName">Last Name </label><input  class="XX25" type="text" name="LastName"   id="LastName"   value= "<%= lname %>" size="30"  maxlen="25" /></li>
-                  <li><label for="MI">Middle I.</label><input         class="XX"   type="text" name="MI"         id="MI"         value= "<%= mi %>"    size="1"   maxlen="1"  /></li>
-                  <li><label for="bDayYYY">Born: YYYY</label><input   class="XXXX" type="text" name="bDayYYYY"   id="bDayYYYY"   value= "<%= bdy %>"   size="4"   maxlen="4"  /></li>
-                  <li><label for="bDayMM">MM</label><input            class="XX"   type="text" name="bDayMM"     id="bDayMM"     value= "<%= bdm %>"   size="2"   maxlen="2"  /></li>
-                  <li><label for="bDayDD">DD</label><input            class="XX"   type="text" name="bDayDD"     id="bDayDD"     value= "<%= bdd %>"   size="2"   maxlen="2"  /></li>
+                  <li><label for="MI">Middle I.</label>       <input         class="XX"   type="text" name="MI"         id="MI"         value= "<%= mi %>"    size="1"   maxlen="1"  /></li>
+                  <li><label for="bDayYYY">Born: YYYY</label> <input   class="XXXX" type="text" name="bDayYYYY"   id="bDayYYYY"   value= "<%= bdy %>"   size="4"   maxlen="4"  /></li>
+                  <li><label for="bDayMM">MM</label>          <input            class="XX"   type="text" name="bDayMM"     id="bDayMM"     value= "<%= bdm %>"   size="2"   maxlen="2"  /></li>
+                  <li><label for="bDayDD">DD</label>          <input            class="XX"   type="text" name="bDayDD"     id="bDayDD"     value= "<%= bdd %>"   size="2"   maxlen="2"  /></li>
                  </ul>                       
                 <div class="center bottom">
                   <p class="messages"><span id="editBDayResponse"></span></p>
@@ -101,10 +101,10 @@
             </div>
           </fieldset>
           <div class="buttons">                                  
-              <input type="submit" name="btn" id="submit" value="Submit"  title= "Save edited info"/>
-              <input type="button" name="btn" id="reset" value="Reset" onclick="document.location.reload(true)" title= "Restore birthday Info" />
-              <input type="button" name="btn" id="home" value="Back" onclick="window.history.back();" title="Return to birthday List" />
-              <input type="button" name="btn" id="delete" value="Delete" title="Delete this birthday" />                                        
+              <input class="submit_button" type="submit" name="btn" id="submit" value="Submit"  title= "Save edited info"/>
+              <input class="reset_button" type="button" name="btn" id="reset" value="Reset" onclick="document.location.reload(true)" title= "Restore birthday Info" />
+              <input class="back_button" type="button" name="btn" id="home" value="Back" onclick="window.history.back();" title="Return to birthday List" />
+              <input class="delete_button" type="button" name="btn" id="delete" value="Delete" title="Delete this birthday" />                                        
           </div>   
         </form>
     </div>

@@ -5,15 +5,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description" content="Family Directory" />
 <meta name="keywords" Content="email phone address family">
-<meta name="author" content="ourwalnuts.com">
+<meta name="author" content="ourchestnuts.com">
 <meta name="robots" content="noindex, nofollow" />
 <meta name="revisit-after" content="3 month" />
 <title>OurChestnuts Sign Up</title>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-<!--<link rel="shortcut icon" href="https://www.ourwalnuts.com/favicon.ico">  -->
-
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/signup.css">
+<link rel="shortcut icon" href="/images/favicon.ico"> 
 <script>
+  
 // TOUCH_JS (default)
 // Create os object
 if(typeof os !== 'object'){
@@ -33,197 +34,11 @@ if(os.isTouchDevice) {
 }
 </script>
 
-<style>/* my additions */
-
-body {
-  position: relative;
-  padding-top: 120px;
-  color: #000000;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  height: 100%;
-  width: 100%;
-  font-size: 15px;
-  background: lightslategray;
-}
-
-h1 {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  font-weight: 100;
-  margin: 10px 0;
-  padding: 10px 0;
-  text-align: center;
-}
-
-h2 {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  font-size: 24px;
-  font-weight: 100;
-  margin: 10px 0;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.page-wrapper {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  font-weight: normal;
-  width: 500px;  
-  position: relative;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.titleContainer {
-  position: relative;
-  width: 442px;
-  height: 463px;
-  color: gold;
-  background-color: black;
-  top: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 2px solid gold;
-  border-radius: 15px;
-  padding: 15px;
-}
-
-.mainContent {
-  height: 369px;
-  width: 439px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-
-#loginForm {
-    float: right;
-    width: 325px;
-}
-
-#registerForm {
-  width: 325px;
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  top: -217px;
-  color: gold;
-}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+<script src="https://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 
 
-.loginLink p {
-    font-size: 14px;
-    margin-top: -10px;
-    white-space: pre;
-}
-
-.loginLinkSpan {
-    width:  75px;
-    margin: auto;
-}
-
-.loginLinkSpan a {
-    color: cornflowerblue;
-}
-
-.designLogo {
-  width: 200px;
-  margin: auto;
-  font-size: 14px;
-}
-
-.sign-in-box-head {
-    font-size: 33.9px;
-    height: 41px;
-    width: 322px;
-    display: block;
-    padding: 0 0 10px 0;
-    transform: none;
-}
-
-.sign-in-box {
-    height: 269px;
-    width: 322px;
-    display: block;
-    padding: 0 20px 0 20px;
-}
-
-form {
-    height: 208px;
-    width: 322px;
-    display: inline-block;
-}
-
-label {
-    font-size: 16px;
-    margin: 0 5px;
-    height: 20px;
-    width: 322px;
-    display: block;
-}
-
-input {
-    margin: 10px 5px;
-    font-size: 14px;
-    background-color: rgb(250, 255, 189);
-}
-
-#cancelSubmit {
-    margin-left: 20px;
-}
-
-#email, #createPassword, #confirmPassword  {
-    font-size: 13px;
-    height: 16px;
-    width: 300px;
-    display: inline-block;
-    border: 1px solid #D3D0CA;
-    margin: 0 0 10px 0;
-    padding: 10px 10px 10px 10px;
-}
-
-#emailAddressRegistered, #emailNotRegistered, #registeredPassword {
-  font-size: 17.999px;
-  height: 16px;
-  width: 300px;
-  display: inline-block;
-  border: 1px solid #D3D0CA;
-  margin: 0 0 10px 0;
-  padding: 10px 10px 10px 10px;
-  font-family: Roboto;
-}
-
- .msg {
-    display: none;
-}
-
-.error {
-    color: red;
-}
-.success {
-    color: green;
-}
-
-.warn {
-  text-align: center;
-  font-size: 16px;
-  font-family: Roboto;
-  color: red;
-  position: relative;
-  top: -162px;
-  width: 221px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-</style>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 <script type="text/javascript">
 $(function() {
   // Handler for .ready() called.
@@ -279,6 +94,8 @@ $(function() {
 });
        
 </script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LeBOM4UAAAAAC14bwSvFo2N1WYPwoxqu1adXObT"}></script>
+
 </head>
 <body>
     <div class="page-wrapper">
@@ -290,6 +107,7 @@ $(function() {
             <div id="registerForm">
                 <div class="sign-in-box">                        
                     <form method='POST' action="/signup" name="newContact" id="registerContactForm">
+                        
                         <div>
                             <label for="emailNotRegistered">Email Address</label>
                             <input type="email" name="email" value="" id="emailNotRegistered" tabindex="1" maxlength="255" class="required" title="This is a required field" autofocus="true" />
@@ -309,8 +127,17 @@ $(function() {
                                     <input id="cancelSubmit" alt="Cancel" type="button" tabindex="5" name="cancel" value="Cancel" onclick="window.history.go(-1); return false;" />                                    
                             </div>
                         </div>
+						<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response"/>
                     </form>
                 </div>
+                <script>                    
+                   grecaptcha.ready(function() {
+                      grecaptcha.execute('6LeBOM4UAAAAAC14bwSvFo2N1WYPwoxqu1adXObT', {action: 'signup'}).then(function(token) {
+                         console.log("Token returned is:" + token)
+                         document.getElementById('g-recaptcha-response').value = token;
+                       }); 
+                    });                   
+                </script>
                 <div class="loginLink">
                 <p>Already have an account?<span class="loginLinkSpan"><a href="/login"> Login </a> Or go <a href="/">Home</a></span></p>                            
                     <div class="text-center designLogo">
@@ -326,6 +153,7 @@ $(function() {
             </div>
         </div>      <!--mainContent class -->
     </div>          <!--page-wrapper class -->
+
 
 </body>
 

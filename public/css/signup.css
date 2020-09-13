@@ -1,0 +1,184 @@
+body {
+  position: relative;
+  padding-top: 120px;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  height: 100%;
+  width: 100%;
+  font-size: 15px;
+  background: lightslategray;
+}
+
+h1 {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  margin: 10px 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+h2 {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 100;
+  margin: 10px 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.page-wrapper {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  width: 500px;  
+  position: relative;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.titleContainer {
+  position: relative;
+  width: 442px;
+  height: 463px;
+  color: gold;
+  background-color: black;
+  top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid gold;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.mainContent {
+  height: 369px;
+  width: 439px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+#loginForm {
+    float: right;
+    width: 325px;
+}
+
+#registerForm {
+  width: 325px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  top: -217px;
+  color: gold;
+}
+
+
+.loginLink p {
+    font-size: 14px;
+    margin-top: -10px;
+    white-space: pre;
+}
+
+.loginLinkSpan {
+    width:  75px;
+    margin: auto;
+}
+
+.loginLinkSpan a {
+    color: cornflowerblue;
+}
+
+.designLogo {
+  width: 200px;
+  margin: auto;
+  font-size: 14px;
+}
+
+.sign-in-box-head {
+    font-size: 33.9px;
+    height: 41px;
+    width: 322px;
+    display: block;
+    padding: 0 0 10px 0;
+    transform: none;
+}
+
+.sign-in-box {
+    height: 269px;
+    width: 322px;
+    display: block;
+    padding: 0 20px 0 20px;
+}
+
+form {
+    height: 208px;
+    width: 322px;
+    display: inline-block;
+}
+
+label {
+    font-size: 16px;
+    margin: 0 5px;
+    height: 20px;
+    width: 322px;
+    display: block;
+}
+
+input {
+    margin: 10px 5px;
+    font-size: 14px;
+    background-color: rgb(250, 255, 189);
+}
+
+#cancelSubmit {
+    margin-left: 20px;
+}
+
+#email, #createPassword, #confirmPassword  {
+    font-size: 13px;
+    height: 16px;
+    width: 300px;
+    display: inline-block;
+    border: 1px solid #D3D0CA;
+    margin: 0 0 10px 0;
+    padding: 10px 10px 10px 10px;
+}
+
+#emailAddressRegistered, #emailNotRegistered, #registeredPassword {
+  font-size: 17.999px;
+  height: 16px;
+  width: 300px;
+  display: inline-block;
+  border: 1px solid #D3D0CA;
+  margin: 0 0 10px 0;
+  padding: 10px 10px 10px 10px;
+  font-family: Roboto;
+}
+
+ .msg {
+    display: none;
+}
+
+.error {
+    color: red;
+}
+.success {
+    color: green;
+}
+
+.warn {
+  text-align: center;
+  font-size: 16px;
+  font-family: Roboto;
+  color: red;
+  position: relative;
+  top: -162px;
+  width: 221px;
+  margin-left: auto;
+  margin-right: auto;
+}

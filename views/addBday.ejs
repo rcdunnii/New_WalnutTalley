@@ -3,14 +3,13 @@
 
 <head>
 
-	<title>Edit BirthDay</title>
+	<title>Add BirthDay</title>
 	
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <link rel="stylesheet" href="/css/BDay.css"/>
- 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>  
 	<script type="text/javascript" src="/js/main.js"></script>
     <script type="text/javascript">
     $(function() { 
@@ -80,29 +79,30 @@
             <div class="center"><h1>Birthday Info!</h1></div>
             <div class="center"><h3>Adding a Birthday</h3></div>
             <form action="" method="POST" id="addBDayForm" >
-               <fieldset> 
-                <div class="center">
- 
+              <fieldset class="data"> 
+              <!--   <div class="center">  -->
                         <input type="hidden" name="_id" id="_id" />                         
- 
                         <ul>                        
                             <li><label for="FirstName">First Name</label><input class="XX15" type="text" name="FirstName"  id="FirstName"  size="30"  maxlen="25" /></li>
-                            <li><label for="LastName">Last Name </label><input  class="XX25" type="text" name="LastName"   id="LastName"   size="30"  maxlen="25" /></li>
-                            <li><label for="MI">Middle I.</label><input         class="XX"   type="text" name="MI"         id="MI"         size="1"   maxlen="1"  /></li>
-                            <li><label for="bDayYYY">Born: YYYY</label><input   class="XXXX" type="text" name="bDayYYYY"   id="bDayYYYY"   size="4"   maxlen="4"  /></li>
-                            <li><label for="bDayMM">MM</label><input            class="XX"   type="text" name="bDayMM"     id="bDayMM"     size="2"   maxlen="2"  /></li>
-                            <li><label for="bDayDD">DD</label><input            class="XX"   type="text" name="bDayDD"     id="bDayDD"     size="2"   maxlen="2"  /></li>
+                            <li><label for="LastName">Last Name </label> <input  class="XX25" type="text" name="LastName"   id="LastName"   size="30"  maxlen="25" /></li>
+                            <li><label for="MI">Middle I.</label>        <input         class="XX"   type="text" name="MI"         id="MI"         size="1"   maxlen="1"  /></li>
+                            <li><label for="bDayYYY">Born: YYYY</label>  <input   class="XXXX" type="text" name="bDayYYYY"   id="bDayYYYY"   size="4"   maxlen="4"  /></li>
+                            <li><label for="bDayMM">MM</label>           <input            class="XX"   type="text" name="bDayMM"     id="bDayMM"     size="2"   maxlen="2"  /></li>
+                            <li><label for="bDayDD">DD</label>           <input            class="XX"   type="text" name="bDayDD"     id="bDayDD"     size="2"   maxlen="2"  /></li>
                        </ul>
-                       <fieldset class="submit">                        
-                            <input type="submit" name="btn" id="submit" value="Submit" />
-                            <input type="button" name="btn" id="reset" value="Reset" onclick="document.location.reload(true)" />
-                            <input type="button" name="btn" id="home" value="Back" onclick="window.history.back();" />
-                        </fieldset>
+			<!--	</div> -->
+		     </fieldset>	  
+            <!--  <fieldset class="buttons">  -->
+				<div class="buttons_addBday">
+					<input class="submit_button"  type="submit" name="btn"  id="submit"  value="Submit" />
+                    <input class="reset_button"   type="button" name="btn"  id="reset"   value="Reset" onclick="document.location.reload(true)" />					
+                    <input class="back_button_addBday"    type="button" name="btn"  id="back"    value="Back" onclick="window.history.back();" />					
+				</div>
+             <!-- </fieldset>   -->
+					   
                         <div class="center bottom">
                             <p class="messages"><span id="editBDayResponse"></span></p>
-                        </div>
-                </div>
-               </fieldset>  
+                        </div>           
             </form>
         </div>
 	</div>
@@ -129,7 +129,7 @@
                           $(this).removeClass('pinkClass').empty().show();
                       });
                    var thisHost = window.location.host;                                    
-                   window.location.replace("http://" + thisHost + "/mainChoice?main=listBdays");                                   
+                   window.location.replace("https://" + thisHost + "/mainChoice?main=listBdays");                                   
      /*                var scrollPosition =  objson.positionID;
                       $(".content").mCustomScrollbar("update");
                       $(".content").mCustomScrollbar("scrollTo", scrollPosition);*/

@@ -1,13 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var contactsSchema = new Schema({    
+var contactsSchema = new Schema({
      "_id": Schema.ObjectId,
     "walnutID": String,
     "visibility": { type : Boolean, default : true },
     "SirName"   : { type : String, required : false },
-    "Names": String,
-    "FormalNames": String,
+    "FirstName" : String,
     "Children": String,
     "Address" :  {type : Array, default : []},   
     "Email"   :  {type : Array, default : []}, 

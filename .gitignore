@@ -9,9 +9,11 @@ lib-cov
 *.gz
 *.zip
 *.py
+*.swp
 .DS_Store
 /*.env
 *.orig
+*.old
 pids
 logs
 results
@@ -20,10 +22,12 @@ npm-debug.log
 node_modules/
 Procfile
 Procfile_dev
+rollbar.js
+data
 
 
-config/secretDatabase.js
-config/secretAuth.js
+conf/secretDatabase.js
+conf/secretAuth.js
 
 # Runtime data
 pids
@@ -67,5 +71,5 @@ contacts.sublime*
 
 !.elasticbeanstalk/*.global.yml
 
-config/auth.js
-config/database.js
+conf/auth.js
+conf/database.js
