@@ -40,7 +40,7 @@
     "nconf": "^0.7.1",
     "node-fetch": "^2.6.0",
     "node-inspect": "^1.11.6",
-    "nodemailer": "^1.11.0",
+    "nodemailer": "^6.4.16",
     "nodemailer-mailgun-transport": "^1.0.1",
     "passport": "^0.3.2",
     "passport-facebook": "~2.1.1",
